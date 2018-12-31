@@ -1,0 +1,1 @@
+export { SubscriberModule } from './subscriber.module';

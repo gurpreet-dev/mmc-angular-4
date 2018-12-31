@@ -1,0 +1,35 @@
+<section class="content-header">
+    <h1>
+      Edit Category
+    </h1>
+  </section>
+  
+  <section class="content">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="box box-primary">
+        <form  [formGroup] = "form" (ngSubmit) = "update()" role="form">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="text" class="form-control" placeholder="Enter Title" name="title" formControlName="title">
+                <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['title'].valid && form.controls['title'].touched">*Please enter title</span>
+              </div>
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Status</label>
+                  <select class="form-control" formControlName="status">
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
+                  </select>
+                </div>
+            </div>
+            <!-- /.box-body -->
+  
+            <div class="box-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  </section>

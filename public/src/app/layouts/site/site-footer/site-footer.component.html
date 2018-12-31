@@ -1,0 +1,98 @@
+<footer class="main-footer">
+	<div class="top-header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6 col-md-3 col-lg-3">
+					<div class="inner-sec">
+						<div class="head-sec">
+							<h5>About Us</h5>
+						</div>
+						<div class="content-sec">
+							<p>Lorem Ipsum is simply dummy text of the printing 
+								and typesetting industry. Lorem Ipsum has been 
+								the industry's standard dummy text ever since the 
+								1500s, when an unknown printer took a galley of 
+								type and scrambled it to make a type specimen 
+								book. It has survived not only five centuries, but 
+								also the leap into electronic typesetting, remaining 
+								essentially unchanged.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3 col-lg-3">
+					<div class="inner-sec">
+						<div class="head-sec">
+							<h5>Help </h5>
+						</div>
+						<div class="content-sec">
+							<ul class="foot-menu">
+								<li>
+									<a routerLink="/contact-us">Contact Support</a>
+								</li>
+								<li>
+									<a routerLink="/faq">FAQ's</a>
+								</li>
+								<li>
+									<a href="#">Billing Support</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3 col-lg-3">
+					<div class="inner-sec">
+						<div class="head-sec">
+							<h5>Legal</h5>
+						</div>
+						<div class="content-sec">
+							<ul class="foot-menu">
+								<li *ngFor="let page of pages">
+									<a routerLink="/accept/{{ page.slug }}">{{ page.title | titlecase }}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3 col-lg-3">
+					<div class="inner-sec">
+						<div class="head-sec">
+							<h5>Work with us</h5>
+						</div>
+						<div class="content-sec">
+							<ul class="foot-menu">
+								<li>
+									<a routerLink="/auth/register">Join Us</a>
+								</li>
+								<li>
+									<a routerLink="/auth/login">Login</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="social-sec">
+						<ul>
+							<li><a href="#"><img src="../../../assets/images/foot-fb-icon.svg"></a></li>
+							<li><a href="#"><img src="../../../assets/images/foot-tw-icon.svg"></a></li>
+							<li><a href="#"><img src="../../../assets/images/foot-gp-icon.svg"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="inner-sec">
+						<p>&copy; 2018 domainname.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

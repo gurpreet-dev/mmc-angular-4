@@ -1,0 +1,71 @@
+<section class="content-header">
+    <h1>
+      Subscriptions
+    </h1>
+  </section>
+  
+    <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+  
+  
+          <div class="box">
+              <!-- /.box-header -->
+              <div class="box-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>Sr No.</th>
+                    <th>Subscribed By</th>
+                    <th>Channel Name</th>
+                    <th>Start Date</th>
+                    <th>Expiry Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let subscription of subscriptions; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td><a href="/admin/users/view/{{ subscription.user[0]._id }}" target="_blank"> {{ subscription.user[0].firstname | titlecase }} {{ subscription.user[0].lastname | titlecase }}</a></td>
+                    <td><a href="/admin/users/view/{{ subscription.channel[0]._id }}" target="_blank">{{ subscription.channel[0].firstname | titlecase }} {{ subscription.channel[0].lastname | titlecase }}</a></td>
+                    <td>{{ subscription.startdate | date:"dd-MMMM-yyyy" }} at {{ subscription.startdate | date:"h:m a" }}</td>
+                    <td>{{ subscription.enddate | date:"dd-MMMM-yyyy" }} at {{ subscription.enddate | date:"h:m a" }}</td>
+                    <td>
+                      <span class="label label-success" *ngIf="subscription.status == 'active'">{{ subscription.status | titlecase }}</span>
+                      <span class="label label-danger" *ngIf="subscription.status == 'expired'">{{ subscription.status | titlecase }}</span>
+                    </td>
+                    <td>
+                      
+                      <a routerLink="/admin/subscriptions/view/{{ subscription._id }}" class="btn btn-info btn-xs">View</a>
+                      <!-- <a routerLink="/admin/users/edit/{{ user._id }}" class="btn btn-success btn-xs">Edit</a>
+                      <a routerLink="/admin/users/change-password/{{ user._id }}" class="btn btn-default btn-xs">Change Password</a>
+                      <a routerLink="/admin/users/albums/{{ user._id }}" class="btn btn-warning btn-xs" *ngIf="user.role == 'channel'">Albums</a>
+                      <a routerLink="/admin/users/videos/{{ user._id }}" class="btn btn-success btn-xs" *ngIf="user.role == 'channel'">Videos</a> -->
+                      
+                    </td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                      <th>Sr No.</th>
+                      <th>Subscribed By</th>
+                      <th>Channel Name</th>
+                      <th>Start Date</th>
+                      <th>Expiry Date</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+  
+  
+      </div>
+    </div>
+  </section>
+          
+  

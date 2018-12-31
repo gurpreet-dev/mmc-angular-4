@@ -1,0 +1,1 @@
+export { AuctionsModule } from './auctions.module';

@@ -1,0 +1,137 @@
+
+.profile-sec .content-part{
+	padding-bottom:50px;
+	background-color:#141414;
+}
+.profile-sec .content-part .inner-sec .head-sec{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	padding:15px 0px 15px 35px;
+	border-bottom:1px solid rgba(255, 255, 255, 0.10);
+	margin-bottom:15px;
+	position:relative;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div{
+	height:19px;
+	width:19px;
+	position:absolute;
+	left:0;
+	top:15px;
+	bottom:15px;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div img{
+	height:100%;
+}
+.profile-sec .content-part .inner-sec .head-sec .gallery-link a{
+	text-decoration:none;
+	display:inline-block;
+	padding:7px 15px;
+	background-color:#f8f8f8;
+	border-radius:2px;
+	text-transform:uppercase;
+	color:rgba(0, 0, 0, 0.55);
+	margin-left:4px;
+}
+.profile-sec .content-part .inner-sec .head-sec .gallery-link a.active{
+	background-color:#611313;
+	color:#ffffff;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .img-wrap{
+	position:relative;
+	overflow:hidden;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .img-wrap img{
+	/* width:100%; */
+	max-width: 100%;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .img-wrap .overlay{
+	display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .img-wrap:hover .overlay{
+	display:block;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .img-wrap .overlay span{
+	height:45px;
+	width:45px;
+	text-align:center;
+	line-height:45px;
+	background-color:#ffffff;
+	border-radius:50%;
+	position:absolute;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .img-wrap .overlay span a{
+	display: block;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .img-wrap .overlay span img{
+	width:25px;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .img-wrap .overlay .delete-cross{
+	position: absolute;
+	right: 10px;
+	top:10px;
+	height: 30px;
+	width: 30px;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .img-wrap .overlay .delete-btn{
+	height: 30px;
+	width: 30px;
+	border: none;
+	border-radius: 50%;
+	background-color: #ffffff;
+	text-align: center;
+	line-height: 30px;
+	color: #611313;
+	font-weight: bold;
+	cursor: pointer;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .album-title{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:flex-start;
+	position:relative;
+	padding-right:90px;
+	padding:5px 0px;
+	margin-bottom:15px;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .album-title h6{
+	font-size:14px;
+}
+.profile-sec .content-part .inner-sec .body-sec .card-wrap .album-title span{
+	font-size:12px;
+	position:absolute;
+	right:0px;
+}
+
+.profile-sec .content-part .inner-sec .body-sec .img-wrap{
+	height: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0D0D0D;
+}
+.profile-sec .timeline-nav{
+	padding:0px;
+	background-color:#080808;
+}
+.profile-sec .timeline-nav ul.navbar-nav li a{
+	padding:15px 30px;
+	text-transform:uppercase;
+	color:#ffffff;
+}
+.profile-sec .timeline-nav ul.navbar-nav li.active a{
+	background-color:#141414;
+}

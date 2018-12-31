@@ -1,0 +1,55 @@
+<section class="content-header">
+    <h1>Video</h1>
+</section>
+
+<section class="content">
+    <div class="row">
+          <div class="col-xs-6">
+          
+                  
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">{{ video.subcategories.videos.title | titlecase }}</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <video controls [muted]="true" width="100%" *ngIf="video.subcategories.videos.video != ''">
+                    <source src="{{ video.subcategories.videos.video }}" type="video/mp4">
+                  </video>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          
+      </div>
+
+      <div class="col-xs-6">
+          
+                  
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-condensed">
+                <tbody>
+                  <tr>
+                    
+                  </tr>
+
+                  <tr><th>Duration</th><td>{{ video.subcategories.videos.duration }}</td></tr>
+                  <tr><th>Size</th><td>{{ video.subcategories.videos.size }}</td></tr>
+                  <tr><th>Views</th><td>{{ video.subcategories.videos.views }}</td></tr>
+                  <tr><th>Uploaded on</th><td>{{ video.subcategories.videos.createdAt | date:"dd-MMMM-yyyy" }} at {{ video.subcategories.videos.createdAt | date:"h:m a" }}</td></tr>
+                  <tr>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          
+      </div>
+
+  </div>
+</section>

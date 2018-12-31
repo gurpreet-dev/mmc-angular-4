@@ -1,0 +1,109 @@
+
+.profile-sec .timeline-nav{
+	padding:0px;
+	background-color:#080808;
+}
+.profile-sec .timeline-nav ul.navbar-nav li a{
+	padding:15px 30px;
+	text-transform:uppercase;
+	color:#ffffff;
+}
+.profile-sec .timeline-nav ul.navbar-nav li.active a{
+	background-color:#141414;
+}
+.profile-sec .content-part{
+	padding-bottom:50px;
+	background-color:#141414;
+}
+.profile-sec .content-part .inner-sec .head-sec{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	padding:15px 0px 15px 35px;
+	border-bottom:1px solid rgba(255, 255, 255, 0.10);
+	margin-bottom:15px;
+	position:relative;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div{
+	height:19px;
+	width:19px;
+	position:absolute;
+	left:0;
+	top:15px;
+	bottom:15px;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div img{
+	height:100%;
+}
+.profile-sec .content-part .inner-sec .head-sec .gallery-link a{
+	text-decoration:none;
+	display:inline-block;
+	padding:7px 15px;
+	background-color:#f8f8f8;
+	border-radius:2px;
+	text-transform:uppercase;
+	color:rgba(0, 0, 0, 0.55);
+	margin-left:4px;
+}
+.profile-sec .content-part .inner-sec .head-sec .gallery-link a.active{
+	background-color:#611313;
+	color:#ffffff;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner{
+	margin-bottom:25px;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .thubnail-outer{
+	position:relative;
+	overflow:hidden;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .thubnail-outer a{
+	display: block;
+    text-decoration: none;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .thubnail-outer a img{
+	width:100%;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .thubnail-outer .overlay{
+	display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .thubnail-outer:hover .overlay{
+	display:block;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .thubnail-outer .overlay span{
+	display: block;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .thubnail-outer .overlay span img{
+	width:100%
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .vd-title{
+	padding:5px 0px;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .vd-title a{
+	display:block;
+	text-decoration:none;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .vd-title a h6{
+	font-size:14px;
+	margin-bottom:5px;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .vd-title .vd-info{
+	display:flex;
+}
+.profile-sec .content-part .inner-sec .body-sec .video-inner .vd-title .vd-info span{
+	font-size:12px;
+}

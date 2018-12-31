@@ -1,0 +1,53 @@
+<section class="profile-sec">
+	<div class="cover-sec">
+		<img src="{{ currentUser.bannerpic }}" alt="Cover-Image">
+		<div class="upload-btn">
+		  <div class="inner-btn">
+			  <input type="file" class="form-control" (change)="changeBanner($event)">
+			  <span class="btn-style">
+				<img src="../../assets/images/upload-camera.svg" alt="Camera">
+			  </span>
+		  </div>
+		</div>
+		<div class="loader-overlay" *ngIf="showBanner">
+		  <div class="loader">
+			<img src="../../assets/images/loader-image.gif" alt="Loading">
+		  </div>
+		</div>
+	  </div>
+	  <div class="avatar-sec">
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			  <div class="avatar-inner">
+				<div class="avatar-wrapper">
+				  <div class="image-wrapper">
+					<img src="{{ currentUser.profilepic }}" alt="Avatar">
+					<div class="upload-btn">
+						<div class="inner-btn">
+							<input type="file" class="form-control" (change)="changeProfile($event)">
+							<span class="btn-style">
+							  <img src="../../assets/images/upload-camera.svg" alt="Camera">
+							</span>
+						</div>
+					  </div>
+					  <div class="loader-overlay" *ngIf="showProfile">
+						  <div class="loader">
+							<img src="../../assets/images/loader-image.gif" alt="Loading">
+						  </div>
+						</div>
+				  </div>
+				</div>
+				<div class="profile-name">
+				  <h5>{{ currentUser.firstname }} {{ currentUser.lastname }}</h5>
+				</div>
+				<div class="btn-sec">
+				  <a routerLink="/cprofile/edit-profile" class="btn btn-default btn-edit">Edit Profile</a>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+  <router-outlet></router-outlet>
+  </section>

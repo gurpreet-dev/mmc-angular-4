@@ -1,0 +1,53 @@
+<section class="content-header">
+  <h1>
+    Plans <!-- <a routerLink="/admin/plans/add" class="btn btn-warning">Add Plan</a> -->
+  </h1>
+</section>
+
+  <!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+
+
+        <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Cost</th>
+                  <th>Duration</th>
+                  <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let plan of plans">
+                  <td>{{ plan.title }}</td>
+                  <td>{{ plan.cost }}</td>
+                  <td>{{ plan.duration }}</td>
+                  <td>
+                    <a class="btn btn-success btn-xs" routerLink='/admin/plans/edit/{{plan._id}}'>Edit</a>
+                    <!-- <button type="button" class="btn btn-danger btn-xs" (click) ='delete(plan._id)'>Delete</button> -->
+                  </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Title</th>
+                  <th>Cost</th>
+                  <th>Duration</th>
+                  <th>Actions</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+
+    </div>
+  </div>
+</section>
+        

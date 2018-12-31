@@ -1,0 +1,182 @@
+<section class="hm-content">
+	<div class="container-fluid">
+		<div class="row">		
+			<div class="side-bar-menu">
+				<div class="side-bar-heading">
+					<h5>All Sex Videos</h5>
+				</div>
+				<!-- <ul class="menu-bar">
+					<li><a href="#">New Models</a></li>
+					<li><a href="#">My Favorites</a></li>
+					<li><a href="#">SPY on Shows</a></li>
+				</ul> -->
+
+
+
+				<ul class="menu-bar" *ngFor="let category of categories">
+					<div class="menu-bar-heading">
+						<h6>{{ category.title }}</h6>
+						<img src="../../assets/images/accordia-arrow.svg">
+					</div>
+					<ng-container *ngFor="let subcategory of category.subcategories">
+					<li *ngIf="subcategory.status == '1'"><a routerLink="/category/{{ subcategory.slug }}">{{ subcategory.title }} <span>{{ subcategory.videos.length }}</span></a></li>
+					</ng-container>
+				</ul>
+
+				<!-- <div class="btn-sec">
+					<a href="#">Show More Tags</a>
+				</div> -->
+			</div><!--/. Side Bar End Here -->
+			<div class="content-sec">
+				<div class="head-sec">
+					<h5>Free Live Sex Cams</h5>
+					<div class="sort-sec ml-auto">
+						<!-- <form class="form-inline">
+							<label for="sort">Sort By</label>
+							<select class="form-control" id="sort">
+								<option >New Face</option>
+								<option >New Face</option>
+							</select>
+						</form> -->
+					</div>
+				</div>
+				<div class="content-outer">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<swiper>
+
+								<div *ngFor="let channel of onlinechannels">
+									<div class="inner-sec">
+										<div class="thubnail-outer">
+											<a routerLink="/channel/live/{{ channel._id }}">
+												<img src="{{ channel.profilepic }}" *ngIf="channel.profilepic; else second">
+												<ng-template #second>
+													<img src="../../assets/images/noimage.png">
+												</ng-template>
+											</a>
+										</div>
+										<div class="live-vd-title">
+											<a href="#"><h6>{{ channel.firstname | titlecase }} {{ channel.lastname | titlecase }}</h6></a>
+											<span class="indicator live" *ngIf="channel.online == 'yes'">Online</span>
+											<span class="indicator" *ngIf="channel.online == 'no'">Offline</span>
+										</div>
+									</div>
+								</div>
+								
+							</swiper>
+						</div>
+					</div>
+				</div><!--/.End Here -->
+				<div class="content-outer">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="section-head">
+								<h5>Trending Videos</h5>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<swiper>
+
+								<div *ngFor="let video of trending_videos">
+									<ng-container *ngIf="video.subcategories.videos.thumbnail">
+									<div class="inner-sec">
+										<div class="thubnail-outer">
+
+											<a routerLink="/video/{{ video.subcategories.videos._id }}" *ngIf="isLogged">
+												<img src="{{ video.subcategories.videos.thumbnail }}">
+												<div class="overlay">
+													<span><img src="../../assets/images/overlay-video-play.svg"></span>
+												</div>
+											</a>
+											<a routerLink="/auth/login" *ngIf="!isLogged">
+												<img src="{{ video.subcategories.videos.thumbnail }}">
+												<div class="overlay">
+													<span><img src="../../assets/images/overlay-video-play.svg"></span>
+												</div>
+											</a>
+
+										</div>
+										<div class="vd-title">
+											<h6>{{ video.subcategories.videos.title | titlecase }}</h6>
+											<div class="vd-info">
+												<span class="duration">{{ video.subcategories.videos.createdAt | dateago }}</span>
+												<span class="views ml-auto" *ngIf="video.subcategories.views?.length > 0">{{ video.views[0].views }} Views</span>
+												<span class="views ml-auto" *ngIf="video.subcategories.views?.length == 0">0 Views</span>
+											</div>
+										</div>
+									</div>
+									</ng-container>
+								</div>
+
+								
+							</swiper>
+						</div>
+					</div>
+				</div><!--/.end here -->
+				<div class="content-outer" *ngFor="let channel of channels">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="section-head">
+								<a routerLink="/channel/view/{{ channel.userdata._id[0] }}"><h5>{{ channel.userdata.firstname[0] | titlecase }} {{ channel.userdata.lastname[0] | titlecase }}</h5></a>
+
+								<ng-container *ngIf="subscribed_channels.includes(channel.userdata._id[0])">
+									<a type="button" class="btn btn-default btn-subscribe" *ngIf="userinfo.role == 'subscriber'">Subscribed</a>
+
+							        <a type="button" routerLink="/auth/login2/{{ channel.userdata._id[0] }}" class="btn btn-default btn-subscribe" *ngIf="!isLogged">Subscribe Now</a>
+								</ng-container>
+
+								<ng-container *ngIf="!subscribed_channels.includes(channel.userdata._id[0])">
+									<a type="button" routerLink="/channel/subscribe/{{ channel.userdata._id[0] }}" class="btn btn-default btn-subscribe" *ngIf="userinfo.role == 'subscriber'">Subscribe Now</a>
+
+							        <a type="button" routerLink="/auth/login2/{{ channel.userdata._id[0] }}" class="btn btn-default btn-subscribe" *ngIf="!isLogged">Subscribe Now</a>
+								</ng-container>
+
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<swiper>
+
+								<div *ngFor="let video of channel.data">
+									<ng-container *ngIf="video.video.thumbnail">
+									<div class="inner-sec">
+										<div class="thubnail-outer">
+											<a routerLink="/video/{{ video.video._id }}" *ngIf="isLogged">
+												<img src="{{ video.video.thumbnail }}">
+												<div class="overlay">
+													<span><img src="../../assets/images/overlay-video-play.svg"></span>
+												</div>
+											</a>
+											<a routerLink="/auth/login" *ngIf="!isLogged">
+												<img src="{{ video.video.thumbnail }}">
+												<div class="overlay">
+													<span><img src="../../assets/images/overlay-video-play.svg"></span>
+												</div>
+											</a>
+											
+											
+										</div>
+										<div class="vd-title">
+											<h6>{{ video.video.title }}</h6>
+											<div class="vd-info">
+												<span class="duration">{{ video.video.createdAt | dateago }}</span>
+												<span class="views ml-auto" *ngIf="video.views?.length > 0">{{ video.views[0].views }} Views</span>
+												<span class="views ml-auto" *ngIf="video.views?.length == 0">0 Views</span>
+											</div>
+										</div>
+									</div>
+									</ng-container>
+								</div>
+								
+							</swiper>
+						</div>
+					</div>
+				</div><!--/.end here -->
+
+			</div>
+		</div>
+	</div>
+</section>

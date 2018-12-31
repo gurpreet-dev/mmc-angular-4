@@ -1,0 +1,56 @@
+<section class="content-header">
+    <h1>
+      Albums <span *ngIf="userinfo.name != ''">( {{ userinfo.name | titlecase }} )</span>
+    </h1>
+  </section>
+  
+    <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+  
+  
+          <div class="box">
+              <!-- /.box-header -->
+              <div class="box-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>Sr. no</th>
+                    <th>Title</th>
+                    <th class="text-center">No. of photos</th>
+                    <th>Created on</th>
+                    <th>Actions</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let album of albums; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ album.title | titlecase }}</td>
+                    <td class="text-center"><span class="badge">{{ album.images.length }}</span></td>
+                    <td>{{ album.createdAt | date: "dd-MMMM-yyyy" }} at {{ album.createdAt | date: "h:m a" }}</td>
+                    <td>
+                      <a routerLink="/admin/users/album/{{ album._id }}" class="btn btn-success btn-xs">See Photos</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                      <th>No.</th>
+                      <th>Title</th>
+                      <th class="text-center">No. of photos</th>
+                      <th>Created on</th>
+                      <th>Actions</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+  
+  
+      </div>
+    </div>
+  </section>
+          
+  

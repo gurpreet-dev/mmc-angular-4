@@ -1,0 +1,67 @@
+<section class="content-header">
+  <h1>
+    Users <a routerLink="/admin/users/add" class="btn btn-warning">Add User</a>
+  </h1>
+</section>
+
+  <!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+
+
+        <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Role</th>
+                  <th>Registered on</th>
+                  <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let user of users; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ user.firstname | titlecase }} {{ user.lastname | titlecase }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.phone }}</td>
+                  <td>{{ user.role | titlecase }}</td>
+                  <td>{{ user.createdAt | date: "dd-MMMM-yyyy" }}</td>
+                  <td>
+                    <!-- <a class="btn btn-success btn-xs">Edit</a> -->
+                    <a routerLink="/admin/users/view/{{ user._id }}" class="btn btn-info btn-xs">View</a>
+                    <a routerLink="/admin/users/edit/{{ user._id }}" class="btn btn-success btn-xs">Edit</a>
+                    <a routerLink="/admin/users/change-password/{{ user._id }}" class="btn btn-default btn-xs">Change Password</a>
+                    <a routerLink="/admin/users/albums/{{ user._id }}" class="btn btn-warning btn-xs" *ngIf="user.role == 'channel'">Albums</a>
+                    <a routerLink="/admin/users/videos/{{ user._id }}" class="btn btn-success btn-xs" *ngIf="user.role == 'channel'">Videos</a>
+                    <!-- <a class="btn btn-danger btn-xs" *ngIf='user.role != "admin"'>Delete</a> -->
+                  </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>No.</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Role</th>
+                  <th>Registered on</th>
+                  <th>Actions</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+
+    </div>
+  </div>
+</section>
+        

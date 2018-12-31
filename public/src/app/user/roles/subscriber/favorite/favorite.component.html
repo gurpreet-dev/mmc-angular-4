@@ -1,0 +1,88 @@
+<section class="profile-sec">
+
+    <div class="content-part">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="inner-sec">					
+              <div class="head-sec">
+                <span class="icon-div"><img src="../../assets/images/favourite-heading-icon.svg" alt="Icon"></span>
+                <h5>Your Favourite Videos</h5>
+              </div>
+              <div class="body-sec">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <swiper *ngIf="videos?.length > '0'">
+
+                      <div *ngFor="let video of videos">
+                        <div class="inner-sec">
+                          <div class="thubnail-outer">
+                            <img src="{{ video.subcategories.videos.thumbnail }}">
+                            <div class="overlay">
+                              <a routerLink="/video/{{ video.subcategories.videos._id }}">
+                                <span><img src="../../assets/images/overlay-video-play.svg"></span>
+                              </a>
+                              <a (click)="unlikeVideo(video.subcategories.videos._id)" class="favourited-icon">
+                                <img src="../../assets/images/favourited-icon.svg" alt="Favourited-Icon">
+                              </a>
+                            </div>
+                          </div>
+                          <div class="vd-title">
+                            <a href="#"><h6>{{ video.subcategories.videos.title | titlecase }}</h6></a>
+                            <div class="vd-info">
+                              <span class="duration">{{ video.subcategories.videos.createdAt | dateago3 }}</span>
+                              <span class="views ml-auto">{{ video.subcategories.videos.views }} Views</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      
+                    </swiper>
+                    <div class="alert alert-warning" *ngIf="videos?.length == '0'">
+                        There is no favorite videos of you!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="inner-sec">					
+              <div class="head-sec">
+                <span class="icon-div"><img src="../../assets/images/favourite-heading-icon.svg" alt="Icon"></span>
+                <h5>Your Favourite Photos</h5>
+              </div>
+              <div class="body-sec">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <swiper *ngIf="photos?.length > '0'">
+
+                      <div *ngFor="let photo of photos">
+                        <div class="image-wrapper">
+                          <img src="{{ photo.albums.images.url }}" alt="Image">
+                          <div class="overlay">
+                            <a>
+                              <span><img src="../../assets/images/view-icon.svg" alt="View"></span>
+                            </a>
+                            <a (click)="unlikePhoto(photo.albums.images._id)" class="favourited"><img src="../../assets/images/favourited-icon.svg" alt="Favourited"></a>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </swiper>
+
+                    <div class="alert alert-warning" *ngIf="photos?.length == '0'">There is no favorite photos of you!</div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

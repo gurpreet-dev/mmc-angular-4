@@ -1,0 +1,110 @@
+<section class="profile-sec">
+	<nav class="navbar navbar-expand-lg navbar-light timeline-nav">
+		<div class="container-fluid">		
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#timeline-menu" aria-controls="timeline-menu" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="timeline-menu">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" routerLink="/channel/view/{{ channel_id }}">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" routerLink="/channel/live/{{ channel_id }}">Live Video</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" routerLink="/channel/videos/{{ channel_id }}">Videos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" routerLink="/channel/albums/{{ channel_id }}">Photos</a>
+					</li>
+					<li class="nav-item">
+                            <a class="nav-link" routerLink="/channel/auctions/{{ channel_id }}">Auction</a>
+                          </li>
+					<!-- <li class="nav-item">
+						<a class="nav-link" routerLink="/channel-favourite">Favourite</a>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="content-part">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="inner-sec">					
+						<div class="head-sec">
+							<span class="icon-div"><img src="../../assets/images/home-icon.svg" alt="Icon"></span>
+							<h5>Home</h5>
+						</div>
+						<div class="body-sec">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<div class="video-outer">
+										<video controls autoplay loop [muted]="true" *ngIf="video.video != ''">
+											<source src="{{ video.video }}" type="video/mp4">
+										</video>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<div class="video-content">
+										<h6>{{ video.title | titlecase }}</h6>
+										<div class="info">
+											<span class="views">{{ video.views }} Views</span>
+											<span class="duration">{{ video.createdAt | dateago2 }}</span>
+										</div>
+										<p>{{ video.description }}</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<div class="video-trand">
+										<div class="head-sec">
+											<span class="icon-div"><img src="../../assets/images/trending-icon.svg" alt="Icon"></span>
+											<h5>Trending Videos</h5>
+										</div>
+										<div class="video-body">
+											<div class="row">
+
+
+												<div class="cus-col-5" *ngFor="let video of videos">
+													<div class="video-inner">
+														<div class="video-wrapper">
+															<img src="{{ video.subcategories.videos.thumbnail }}" alt="Thumbnail">
+															<div class="overlay">
+																<a routerLink="">
+																	<span><img src="../../assets/images/overlay-video-play.svg" alt="Play"></span>
+																</a>
+																<!-- <a routerLink="" class="favourite">
+																	<img src="../../assets/images/heart-icon.svg" alt="Favourite">
+																</a> -->
+															</div>
+														</div>
+														<div class="vd-title">
+															<a routerLink="">
+																<h6>{{ video.subcategories.videos.title | titlecase }}</h6>
+															</a>
+															<div class="vd-info">
+																<span class="duration">{{ video.subcategories.videos.createdAt | dateago2 }}</span>
+																<span class="views ml-auto">{{ video.subcategories.videos.views }} Views</span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+
+
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

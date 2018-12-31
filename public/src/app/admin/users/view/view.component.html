@@ -1,0 +1,46 @@
+<section class="content-header">
+    <h1>Profile</h1>
+</section>
+
+<section class="content">
+    <div class="row">
+          <div class="col-xs-12">
+          
+                  
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"></h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table table-condensed">
+                <tbody>
+                  <tr>
+                    
+                  </tr>
+
+                  <tr><th>First name</th><td>{{ user.firstname | titlecase }}</td></tr>
+                  <tr><th>Last name</th><td>{{ user.lastname | titlecase }}</td></tr>
+                  <tr><th>Email</th><td>{{ user.email }}</td></tr>
+                  <tr><th>Phone</th><td>{{ user.phone }}</td></tr>
+                  <tr><th>Role</th><td>{{ user.role | titlecase }}</td></tr>
+                  <tr><th>DOB</th><td>{{ user.dob }}</td></tr>
+                  <tr><th>Country</th><td>{{ user.country | titlecase }}</td></tr>
+                  <tr><th>Profile pic</th><td><img src="{{ user.profilepic }}" *ngIf="user.profilepic" width="150"></td></tr>
+                  <tr><th>Banner</th><td><img src="{{ user.bannerpic }}" *ngIf="user.bannerpic" width="300"></td></tr>
+                  
+                    <tr><td>
+                    <a href="http://gurpreet.gangtask.com/nanny/admin/editnanny/15" class="btn btn-success">Edit</a>
+                    <a href="http://gurpreet.gangtask.com/nanny/admin/cpnanny/15" class="btn btn-warning">Change Password</a>
+                    </td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          
+      </div>
+  </div>
+</section>

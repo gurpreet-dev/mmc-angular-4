@@ -1,0 +1,71 @@
+.faq-sec{
+	padding: 50px 0px;
+    position: relative;
+    overflow: hidden;
+}
+.faq-sec .bg-image{
+	position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+}
+.faq-sec .overlay{
+	position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+.faq-sec .accordian-wrapper .head-sec h5{
+	text-transform:uppercase;
+	margin-bottom:15px;
+}
+.faq-sec .body-part .accordion .card{
+	border:none;
+	margin-bottom:15px;
+}
+.faq-sec .body-part .accordion .card .card-header{
+	border-radius:0px;
+	border:none;
+	padding:10px 15px;
+	background-color:#611313;
+}
+.faq-sec .body-part .accordion .card .card-header button{
+	display:block;
+	width:100%;
+	font-family: 'robotobold';
+	font-size:14px;
+	color:#ffffff;
+	text-align:left;
+	text-decoration:none;
+	padding:0px;
+	border:none;
+	padding-right:40px;
+	position:relative;
+}
+.faq-sec .body-part .accordion .card .card-header button:after{
+	position:absolute;
+	content:'';
+	background-image:url('../../assets/images/accordian-arrow.svg');
+	height: 15px;
+    width: 15px;
+    background-size: cover;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.faq-sec .body-part .accordion .card .card-header button[aria-expanded="true"]:after{
+	transform:rotate(180deg);
+}
+.faq-sec .body-part .accordion .card .card-body{
+	font-size:14px;
+	color:#ffffff;
+	padding:10px 15px;
+	background-color:#141414;
+}

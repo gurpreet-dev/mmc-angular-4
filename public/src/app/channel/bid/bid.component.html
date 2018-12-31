@@ -1,0 +1,79 @@
+<section class="profile-sec">
+    <nav class="navbar navbar-expand-lg navbar-light timeline-nav">
+      <div class="container-fluid">		
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#timeline-menu" aria-controls="timeline-menu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="timeline-menu">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/channel/view/{{ channel_id }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/channel/live/{{ channel_id }}">Live Video</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/channel/videos/{{ channel_id }}">Videos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/channel/albums/{{ channel_id }}">Photos</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" routerLink="/channel/auctions/{{ channel_id }}">Auction</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/channel-favourite">Favourite</a>
+                  </li> -->
+                </ul>
+          </div>
+      </div>
+  </nav>
+      <div class="content-part">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="inner-sec">					
+                <div class="head-sec">
+                  <span class="icon-div"><img src="../../assets/images/gallery-icon.svg" alt="Icon"></span>
+                  <h5>Bid Now</h5>
+                </div>
+                <div class="body-sec">
+                  <div class="row">
+  
+                      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                          <img src="{{ auction.file }}" alt="Thumbnail" *ngIf="auction.type == 'image'">
+                          <img src="{{ auction.thumbnail }}" alt="Thumbnail" *ngIf="auction.type == 'video'">
+                      </div>
+
+                      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                          <h2>{{ auction.title | titlecase }}</h2>
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <p><strong>Start Time:</strong> {{ auction.start_date | date: "dd-MM-yyyy" }}</p>
+                                <p><strong>End Time:</strong> {{ auction.end_date | date: "dd-MM-yyyy" }}</p>
+                                <countdown (reached)="expireAuction($event)" units="Days | Hours | Minutes | Seconds"  end="{{ auction.end_date }}"></countdown>
+                                <p><strong>Base Price:</strong> ${{ auction.price | number : '1.2-2' }}</p>
+                                <p *ngIf="highest_bid != '0'"><strong>Highest Bid:</strong> ${{ highest_bid | number : '1.2-2' }} By {{ highest_bidder | titlecase }}</p>
+                                <p><strong>Total Bids:</strong> {{ bids }}</p>
+                                <form  [formGroup] = "form" (ngSubmit) = "save()" role="form" class="form-horizontal">
+                                <div class="form-group">
+                                  <label><strong>Bid Now:</strong> </label>
+                                  <input type="text" class="form-control" placeholder="Enter price" formControlName="bid">
+                                  <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['bid'].valid && form.controls['bid'].touched">*Please enter valid bid price</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="form-control" class="btn">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

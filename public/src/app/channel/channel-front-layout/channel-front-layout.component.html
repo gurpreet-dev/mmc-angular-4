@@ -1,0 +1,42 @@
+<section class="profile-sec">
+	<div class="cover-sec">
+		<img src="{{ currentUser.bannerpic }}" alt="Cover-Image">
+	</div>
+	<div class="avatar-sec">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="avatar-inner">
+						<div class="avatar-wrapper">
+							<div class="image-wrapper">
+								<img src="{{ currentUser.profilepic }}" alt="Avatar">
+							</div>
+						</div>
+						<div class="profile-name">
+							<h5>{{ currentUser.firstname | titlecase}} {{ currentUser.lastname | titlecase }}</h5>
+							<p>{{ currentUser.subscribers }} Subscribers</p>
+						</div>
+						<div class="btn-sec">
+							<!-- <a type="button" routerLink="/channel/subscribe/{{ currentUser._id }}" class="btn btn-default btn-subscribe" *ngIf="userinfo.role == 'subscriber'">Subscribe Now</a>
+
+								<a type="button" routerLink="/auth/login2/{{currentUser._id }}" class="btn btn-default btn-subscribe" *ngIf="!isLogged">Subscribe Now</a> -->
+
+								<ng-container *ngIf="subscribed == true; else not">
+									<a type="button" class="btn btn-default btn-subscribe" *ngIf="isLogged && userinfo.role == 'subscriber'">Subscribed</a>
+
+							        <a type="button" routerLink="/auth/login2/{{ currentUser._id }}" class="btn btn-default btn-subscribe" *ngIf="!isLogged">Subscribe Now</a>
+								</ng-container>
+
+								<ng-template #not>
+									<a type="button" routerLink="/channel/subscribe/{{ currentUser._id }}" class="btn btn-default btn-subscribe" *ngIf="isLogged && userinfo.role == 'subscriber'">Subscribe Now</a>
+
+							        <a type="button" routerLink="/auth/login2/{{ currentUser._id }}" class="btn btn-default btn-subscribe" *ngIf="!isLogged">Subscribe Now</a>
+								</ng-template>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <router-outlet></router-outlet>
+</section>

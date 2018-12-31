@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mean</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdn.ckeditor.com/4.5.11/full/ckeditor.js"></script>
+</head>
+<body>
+
+  <script>
+    var url = window.location.pathname;
+
+    if(url.includes('admin')){
+      document.write("<style>.swal2-popup{font-size:14px !important;}</style>");
+    }else{
+      document.write("<style>body,p{color:#fff}*,p{margin:0}*{padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}@font-face{font-family:robotoregular;src:url(assets/fonts/roboto-regular-webfont.eot);src:url(assets/fonts/roboto-regular-webfont.eot?#iefix) format('embedded-opentype'),url(assets/fonts/roboto-regular-webfont.woff2) format('woff2'),url(assets/fonts/roboto-regular-webfont.woff) format('woff'),url(assets/fonts/roboto-regular-webfont.ttf) format('truetype'),url(assets/fonts/roboto-regular-webfont.svg#robotoregular) format('svg');font-weight:400;font-style:normal}@font-face{font-family:robotobold;src:url(assets/fonts/roboto-bold-webfont.eot);src:url(assets/fonts/roboto-bold-webfont.eot?#iefix) format('embedded-opentype'),url(assets/fonts/roboto-bold-webfont.woff2) format('woff2'),url(assets/fonts/roboto-bold-webfont.woff) format('woff'),url(assets/fonts/roboto-bold-webfont.ttf) format('truetype'),url(assets/fonts/roboto-bold-webfont.svg#robotobold) format('svg');font-weight:400;font-style:normal}@font-face{font-family:robotolight;src:url(assets/fonts/roboto-light-webfont.eot);src:url(assets/fonts/roboto-light-webfont.eot?#iefix) format('embedded-opentype'),url(assets/fonts/roboto-light-webfont.woff2) format('woff2'),url(assets/fonts/roboto-light-webfont.woff) format('woff'),url(assets/fonts/roboto-light-webfont.ttf) format('truetype'),url(assets/fonts/roboto-light-webfont.svg#robotolight) format('svg');font-weight:400;font-style:normal}body{font-size:14px;font-family:robotoregular}h1,h2,h3,h4,h5,h6{font-family:robotobold;color:#fff;margin:0}h1{font-size:31px}h2{font-size:27px}h3{font-size:24px}h4{font-size:21px}h5{font-size:19px}h6{font-size:16px}p{font-size:14px;font-family:robotoregular}.clear{clear:both}</style>");
+    }
+    </script>
+
+  <app-root></app-root>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<section class="profile-sec">
+    <nav class="navbar navbar-expand-lg navbar-light timeline-nav">
+        <div class="container-fluid">		
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#timeline-menu" aria-controls="timeline-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="timeline-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" routerLink="/cprofile/albums">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/live-broadcast">Live Video</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/payment">Payment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/subscription-plans">Subscription plans</a>
+                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/cprofile/auctions">Auctions</a>
+                            </li>
+                </ul>
+            </div>
+        </div>
+  </nav>
+    <div class="content-part">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="inner-sec">					
+              <div class="head-sec">
+                <span class="icon-div"><img src="../../assets/images/gallery-icon.svg" alt="Icon"></span>
+                <h5>Upload Photos</h5>
+                <div class="gallery-link ml-auto">
+                  <a routerLink="/cprofile/albums">Albums</a>
+                  <a class="active" routerLink="/cprofile/upload-photos">Upload Photos</a>
+                  <a routerLink="/cprofile/create-album">Create Album</a>
+                  <!-- <a routerLink="">Edit</a> -->
+                </div>
+              </div>
+              <div class="body-sec">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                      <form  [formGroup] = "form" (ngSubmit) = "save()" role="form" class="form-horizontal">
+                      <div class="form-group">
+                        <label>Select Album</label>
+                        <select class="form-control" formControlName="album">
+                          <option *ngFor="let album of albums" value="{{ album._id }}">{{ album.title }}</option>
+                        </select>
+                        <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['album'].valid && form.controls['album'].touched">*Please select album</span>
+                      </div>
+                      <div class="form-group">
+                        <label>Choose images</label>
+                        <div class="file-outer">
+                          <input type="file" class="form-control" multiple (change) = "setImages($event)" formControlName="images" accept="image/png,image/jpeg,image/jpg">
+                          <span class="custome-file">
+                            <img src="../../assets/images/upload-icon.svg" alt="File-Icon">
+                          </span>
+                        </div>
+                        <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['images'].valid && form.controls['images'].touched">*Please select images</span>
+                      </div>
+                      <div class="btn-sec">
+                        <input type="submit" class="btn btn-default btn-sub" value="{{ button }}" [disabled] = "isDisabled">
+                      </div>
+                    </form>
+                    
+                  </div>
+                  <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                      <!-- <div class="image-loader" *ngIf="percentage > 0">
+                      <circle-progress [percent]="percentage" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="false" [animationDuration]="300" [startFromZero]="false"></circle-progress>
+                      </div> -->
+
+                      <div *ngFor="let progress of progressor; let i of index">
+                        <p>{{ progress.image }}</p>
+                      <progress-bar [progress]="progress.percentage" [color]="progress.color"></progress-bar>
+                      </div>
+
+
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

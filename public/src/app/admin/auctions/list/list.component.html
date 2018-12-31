@@ -1,0 +1,73 @@
+<section class="content-header">
+    <h1>
+      Auctions
+    </h1>
+  </section>
+  
+    <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+  
+  
+          <div class="box">
+              <!-- /.box-header -->
+              <div class="box-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>Sr.no</th>
+                    <th>Channel</th>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Base Price</th>
+                    <th>Ongoing Status</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let auction of auctions; let i = index">
+                      <td>{{ i + 1 }}</td>
+                      <td><a routerLink="/admin/users/view/{{ auction.user._id }}" target="_blank">{{ auction.user.firstname | titlecase }} {{ auction.user.lastname | titlecase }}</a></td>
+                      <td>{{ auction.title | titlecase }}</td>
+                      <td>{{ auction.type | titlecase }}</td>
+                      <td>${{ auction.price | number : '1.2-2' }}</td>
+                      <td>
+                        <span class="label label-success" *ngIf="auction.status2 == '1'">Ongoing</span>
+                        <span class="label label-danger" *ngIf="auction.status2 == '0'">Expired</span>
+                      </td>
+                      <td>
+                        <span class="label label-danger" *ngIf="auction.status == '0'">Suspended</span>
+                        <span class="label label-warning" *ngIf="auction.status == '1'">Ongoing</span>
+                        <span class="label label-success" *ngIf="auction.status == '2'">Sold</span>
+                      </td>
+                      <td>
+                        <a class="btn btn-info btn-xs" routerLink='/admin/auctions/view/{{auction._id}}'>View</a>
+                        <!-- <button type="button" class="btn btn-danger btn-xs" (click) ='delete(faq._id)'>Delete</button> -->
+                      </td>
+                    </tr>
+                    </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>Sr.no</th>
+                    <th>Channel</th>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Base Price</th>
+                    <th>Ongoing Status</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+  
+  
+      </div>
+    </div>
+  </section>
+          
+  

@@ -1,0 +1,59 @@
+<section class="content-header">
+    <h1>
+      All videos
+    </h1>
+  </section>
+  
+    <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+  
+  
+          <div class="box">
+              <!-- /.box-header -->
+              <div class="box-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>Sr.no</th>
+                    <th>Title</th>
+                    <th>Size</th>
+                    <th>Duration</th>
+                    <th>Uploaded on</th>
+                    <th>Actions</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let video of videos; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ video.subcategories.videos.title | titlecase }}</td>
+                    <td>{{ video.subcategories.videos.size }}</td>
+                    <td>{{ video.subcategories.videos.duration }}</td>
+                    <td>{{ video.subcategories.videos.createdAt | date:"dd-MMMM-yyyy h:m a" }}</td>
+                    <td>
+                      <a class="btn btn-info btn-xs" routerLink='/admin/videos/view/{{video.subcategories.videos._id}}'>View</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>Sr.no</th>
+                    <th>Title</th>
+                    <th>Size</th>
+                    <th>Duration</th>
+                    <th>Uploaded on</th>
+                    <th>Actions</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+  
+  
+      </div>
+    </div>
+  </section>
+          
+  

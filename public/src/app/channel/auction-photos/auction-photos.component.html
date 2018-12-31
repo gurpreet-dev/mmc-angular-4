@@ -1,0 +1,86 @@
+<section class="profile-sec">
+    <nav class="navbar navbar-expand-lg navbar-light timeline-nav">
+      <div class="container-fluid">		
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#timeline-menu" aria-controls="timeline-menu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="timeline-menu">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/channel/view/{{ channel_id }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/channel/live/{{ channel_id }}">Live Video</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/channel/videos/{{ channel_id }}">Videos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/channel/albums/{{ channel_id }}">Photos</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" routerLink="/channel/auctions/{{ channel_id }}">Auction</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/channel-favourite">Favourite</a>
+                  </li> -->
+                </ul>
+          </div>
+      </div>
+  </nav>
+      <div class="content-part">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="inner-sec">					
+                <div class="head-sec">
+                  <span class="icon-div"><img src="../../assets/images/gallery-icon.svg" alt="Icon"></span>
+                  <h5>Auction Photos</h5>
+                </div>
+                <div class="body-sec">
+                  <div class="row">
+  
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let auction of auctions">
+                      <div class="card-wrap">
+                        <div class="img-wrap">
+                          <a routerLink="/channel/bid/{{ channel_id }}/{{ auction._id }}">
+  
+                            <img src="{{ auction.file }}" alt="Thumbnail" *ngIf="auction.type == 'image'">
+                            <img src="{{ auction.thumbnail }}" alt="Thumbnail" *ngIf="auction.type == 'video'">
+  
+                            <div class="overlay">
+                              <span>Bid Now</span>
+                            </div>
+                          </a>
+                        </div>
+                        <div class="photo-info">
+                          <a href="#"><h6>{{ auction.title | titlecase }}  <span class="badge badge-success" *ngIf="auction.type == 'video'">{{ auction.type | titlecase }}</span>
+                            <span class="badge badge-warning" *ngIf="auction.type == 'image'">{{ auction.type | titlecase }}</span></h6></a>
+                          <div class="starting-time">
+                            <span class="date"><strong>Start Date</strong>: {{ auction.start_date | date:"dd-MM-yyyy" }}</span>
+                            <span class="time"><strong>Start Time</strong>: {{ auction.start_date | date:"h:mm a" }}</span>
+                          </div>
+                          <div class="ending-time">
+                            <span class="date"><strong>End Date</strong>: {{ auction.end_date | date:"dd-MM-yyyy" }}</span>
+                            <span class="time"><strong>End Time</strong>: {{ auction.end_date | date:"h:mm a" }}</span>
+                          </div>
+                          <div class="ending-time">
+                            <span class="date"><strong>Base Price</strong>: ${{ auction.price }}</span>
+                            <span class="time" *ngIf="auction.type == 'video'"> {{ auction.size }} | {{ auction.duration }} </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngIf="auctions_count == 0">
+                        <div class="alert alert-warning">No photos for auction at this time!</div>
+                        </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

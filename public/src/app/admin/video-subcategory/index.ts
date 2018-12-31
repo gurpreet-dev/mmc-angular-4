@@ -1,0 +1,1 @@
+export { VideoSubcategoryModule } from './video-subcategory.module';

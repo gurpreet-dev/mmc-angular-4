@@ -1,0 +1,52 @@
+<section class="profile-sec">
+        
+        <div class="content-part">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="inner-sec">					
+                            <div class="head-sec">
+                                <span class="icon-div"><img src="../../assets/images/subscription-plan.svg" alt="Icon"></span>
+                                <h5>Subscribed Channels</h5>
+                            </div>
+                            <div class="body-sec">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 m-auto">	
+                                        <div id="no-more-tables">
+                                            <table class="table table-striped table-bordered cf" id="example2">
+                                                <thead class="cf">
+                                                    <tr>
+                                                        <th>Channel Name</th>
+                                                        <th>Plan</th>
+                                                        <th>Cost</th>
+                                                        <th>Subscription Date</th>
+                                                        <th class="numeric">Expiry Date</th>
+                                                        <th class="numeric">Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr *ngFor="let subscription of subscriptions">
+                                                        <td data-title="Channel Name">{{ subscription.channel[0].firstname | titlecase }} {{ subscription.channel[0].lastname | titlecase }}</td>
+                                                        <td data-title="Plan">{{ subscription.plan | titlecase }}</td>
+                                                        <td data-title="Cost">${{ subscription.cost }}</td>
+                                                        <td data-title="Subscription Date">{{ subscription.startdate | date: "dd-MMMM-yy" }} at {{ subscription.startdate | date: "h:m a" }}</td>
+                                                        <td data-title="Expiry Date" class="numeric">{{ subscription.enddate | date: "dd-MMMM-yy" }} at {{ subscription.enddate | date: "h:mm a" }}</td>
+                                                        <td data-title="Status" class="numeric">
+                                                            <span class="active" *ngIf="subscription.status == 'active'">Active</span>
+                                                            <span class="expiried" *ngIf="subscription.status == 'expired'">Expired</span>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

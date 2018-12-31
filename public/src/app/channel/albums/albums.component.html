@@ -1,0 +1,70 @@
+<section class="profile-sec">
+    <nav class="navbar navbar-expand-lg navbar-light timeline-nav">
+              <div class="container-fluid">		
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#timeline-menu" aria-controls="timeline-menu" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="timeline-menu">
+                      <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link" routerLink="/channel/view/{{ channel_id }}">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" routerLink="/channel/live/{{ channel_id }}">Live Video</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" routerLink="/channel/videos/{{ channel_id }}">Videos</a>
+                          </li>
+                          <li class="nav-item active">
+                            <a class="nav-link" routerLink="/channel/albums/{{ channel_id }}">Photos</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" routerLink="/channel/auctions/{{ channel_id }}">Auction</a>
+                          </li>
+                          <!-- <li class="nav-item">
+                            <a class="nav-link" routerLink="/channel-favourite">Favourite</a>
+                          </li> -->
+                        </ul>
+                  </div>
+              </div>
+        </nav>
+<div class="content-part">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="inner-sec">					
+          <div class="head-sec">
+            <span class="icon-div"><img src="../../assets/images/gallery-icon.svg" alt="Icon"></span>
+            <h5>Albums of this channel</h5>
+          </div>
+          <div class="body-sec">
+            <div class="row">
+
+              <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" *ngFor="let album of albums">
+                <div class="card-wrap">
+                  <div class="img-wrap">
+                    <img src="{{ album.thumbnail }}" alt="Thumbnail">
+                    <div class="overlay">
+                      <a routerLink="/channel/album/{{ channel_id }}/{{ album._id}}">
+                        <div class="details-alb">
+                            <h6>Uploaded On <span>{{ album.createdAt |  date: 'dd MMMM, yyyy' }}</span></h6>
+                            <span>{{ album.images.length }} Items</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"*ngIf="albums?.length == 0">
+                <div class="alert alert-warning">No albums found!</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

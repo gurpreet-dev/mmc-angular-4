@@ -1,0 +1,190 @@
+.profile-sec .cover-sec{
+	display:block;
+	position:relative;
+	height:350px;
+	overflow:hidden;
+}
+.profile-sec .cover-sec img{
+	position:absolute;
+	left:0;
+	top:0;
+	min-height:100%;
+	min-width:100%;
+}
+.profile-sec .avatar-sec{
+	position:relative;
+	background-color:#080808;
+}
+.profile-sec .avatar-sec .avatar-inner{
+	position:relative;
+	min-height:105px;
+	padding-left:190px;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:flex-start;
+}
+.profile-sec .avatar-sec .avatar-inner .avatar-wrapper{
+	display:block;
+	position:absolute;
+	left:0;
+	top:-85px;
+	height:175px;
+	width:175px;
+	padding:5px 5px;
+	background-color:#141414;
+	border-radius:4px;
+	overflow:hidden;
+}
+.profile-sec .avatar-sec .avatar-inner .avatar-wrapper .image-wrapper{
+	width:100%;
+	height:100%;
+	background-color:#ffffff;
+	border-radius:4px;
+}
+.profile-sec .avatar-sec .avatar-inner .avatar-wrapper .image-wrapper img{
+	min-height:100%;
+	min-width:100%;
+}
+.profile-sec .avatar-sec .avatar-inner .profile-name h5{
+	text-transform:uppercase;
+}
+.profile-sec .avatar-sec .avatar-inner .btn-sec{
+	margin-left:auto;
+}
+.profile-sec .avatar-sec .avatar-inner .btn-sec .btn-edit{
+	border:none;
+	border-radius:2px;
+	padding: 7px 15px;
+    background-color: #611313;
+    font-size: 14px;
+    font-family: 'robotobold';
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.profile-sec .avatar-sec .avatar-inner .btn-sec .btn-edit:hvoer{
+	background-color:#470d0d;
+}
+.profile-sec .timeline-nav{
+	padding:0px;
+	background-color:#080808;
+}
+.profile-sec .timeline-nav ul.navbar-nav li a{
+	padding:15px 30px;
+	text-transform:uppercase;
+	color:#ffffff;
+}
+.profile-sec .content-part{
+	padding-bottom:50px;
+	background-color:#141414;
+}
+.profile-sec .content-part .inner-sec .head-sec{
+	display:flex;
+	flex-wrap:wrap;
+	padding:15px 0px 15px 35px;
+	border-bottom:1px solid rgba(255, 255, 255, 0.10);
+	margin-bottom:15px;
+	position:relative;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div{
+	height:19px;
+	width:19px;
+	position:absolute;
+	left:0;
+	top:15px;
+	bottom:15px;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div img{
+	height:100%;
+}
+.profile-sec .content-part .inner-sec form .form-group label,
+.profile-sec .content-part .inner-sec form .btn-sec label{
+	display:block;
+}
+.profile-sec .content-part .inner-sec form .form-group .form-control{
+	font-size: 14px;
+    color: #8c8c8c;
+    height: 35px;
+    border: 1px solid #e5e6e7;
+    border-radius: 2px;
+}
+.profile-sec .content-part .inner-sec form .form-group textarea.form-control{
+	height: auto;
+}
+.profile-sec .content-part .inner-sec form .form-group .form-check{
+	position:relative;
+	padding-left:20px;
+}
+.profile-sec .content-part .inner-sec form .form-group .form-check input[type="radio"]{
+	height:15px;
+	width:15px;
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+	z-index:9;
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+.profile-sec .content-part .inner-sec form .form-group .form-check span.custom-check{
+	display:block;
+	height:15px;
+	width:15px;
+	background-color:transparent;
+	border:2px solid #ffffff;
+	border-radius:50%;
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec form .form-group .form-check input[type="radio"]:checked + span.custom-check:after{
+	position:absolute;
+	content:'';
+	height:7px;
+	width:7px;
+	background-color:#ffffff;
+	border-radius:50%;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec form .form-group .form-control::-webkit-input-placeholder,
+.profile-sec .content-part .inner-sec form .form-group .form-control::-moz-placeholder,
+.profile-sec .content-part .inner-sec form .form-group .form-control:-moz-placeholder,
+.profile-sec .content-part .inner-sec form .form-group .form-control:-ms-placeholder{
+	color: #8c8c8c;
+}
+.profile-sec .content-part .inner-sec form .btn-sec{
+	text-align:right;
+}
+.profile-sec .content-part .inner-sec form .btn-sec .btn-submit{
+	border: none;
+    border-radius: 2px;
+    padding: 7px 15px;
+    background-color: #611313;
+    font-size: 14px;
+    font-family: 'robotobold';
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.profile-sec .content-part .inner-sec form .btn-sec .btn-submit:hover{
+	background-color:#470d0d;
+}
+.profile-sec .timeline-nav{
+	padding:0px;
+	background-color:#080808;
+}
+.profile-sec .timeline-nav ul.navbar-nav li a{
+	padding:15px 30px;
+	text-transform:uppercase;
+	color:#ffffff;
+}
+.profile-sec .timeline-nav ul.navbar-nav li.active a{
+	background-color:#141414;
+}

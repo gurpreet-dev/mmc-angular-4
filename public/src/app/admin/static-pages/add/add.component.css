@@ -1,0 +1,49 @@
+/* .cke_1 .cke_toolgroup {
+    background-image: linear-gradient(rgb(179, 0, 0), rgb(179, 0, 0)) !important;
+    border-color: none !important;
+} */
+
+.terms-sec{
+	padding: 50px 0px 20px 0px;
+    position: relative;
+    overflow: hidden;
+}
+.terms-sec .bg-image{
+	position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+	height:100%;
+    width: 100%;
+    margin: auto;
+}
+.terms-sec .overlay{
+	position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+.terms-sec .head-sec h5{
+	text-align:center;
+	text-transform:uppercase;
+	margin-bottom:15px;
+}
+.terms-sec .outer-sec{
+	padding:15px 15px;
+	background-color:#000000;
+	border-radius:5px;
+	margin-bottom:30px;
+}
+.terms-sec .outer-sec.black{
+	background-color:#000000;
+}
+.terms-sec .outer-sec.red{
+	background-color:#611313;
+}
+.terms-sec .outer-sec h6{
+	margin-bottom:10px;
+}

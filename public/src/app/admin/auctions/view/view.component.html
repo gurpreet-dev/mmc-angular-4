@@ -1,0 +1,116 @@
+<section class="content-header">
+  <h1>Auction</h1>
+</section>
+
+<section class="content">
+  <div class="row">
+        <div class="col-xs-7">
+        
+                
+        <div class="box box-danger">
+          <div class="box-header">
+            <h3 class="box-title"></h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <table class="table table-condensed">
+              <tbody>
+                <tr>
+                
+                </tr>
+
+                <tr><th>File</th><td>
+                  <img src="{{ auction.file }}" alt="Thumbnail" *ngIf="auction.type == 'image'">
+                  <img src="{{ auction.thumbnail }}" alt="Thumbnail" *ngIf="auction.type == 'video'">
+                </td></tr>
+                <tr><th>File type</th><td>{{ auction.type | titlecase }}</td></tr>
+                <tr><th>Start time</th><td>{{ auction.start_date | date: "dd-MM-yyyy" }}</td></tr>
+                <tr><th>End time</th><td>{{ auction.end_date | date: "dd-MM-yyyy" }}</td></tr>
+                <tr><th>Base price</th><td>${{ auction.price | number : '1.2-2' }}</td></tr>
+                <tr *ngIf="highest_bid != '0'"><th>Highest Bid</th><td>${{ highest_bid | number : '1.2-2' }} By {{ highest_bidder | titlecase }}</td></tr>
+                <tr><th>Ongoing status</th><td>
+                  <span class="label label-success" *ngIf="auction.status2 == '1'">Ongoing</span>
+                  <span class="label label-danger" *ngIf="auction.status2 == '0'">Expired</span>
+                </td></tr>
+                <tr><th>Status</th><td>
+                  <span class="label label-danger" *ngIf="auction.status == '0'">Suspended</span>
+                  <span class="label label-warning" *ngIf="auction.status == '1'">Ongoing</span>
+                  <span class="label label-success" *ngIf="auction.status == '2'">Sold</span>
+                </td></tr>
+                
+              </tbody>
+            </table>
+          </div>
+          <!-- /.box-body -->
+        </div>
+
+        <div class="box" *ngIf="auction.status2 == '0'">
+          <div class="box-header">
+            <h3 class="box-title">Payment info</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <table class="table table-condensed">
+              <tbody>
+
+                <tr *ngIf="auction.status == '2'">
+                  <th>Payment Status</th><td><span class="label label-success">Completed</span></td>
+                </tr>
+
+                <tr *ngIf="auction.status == '1'">
+                  <th>Payment Status</th><td><span class="label label-success">Incomplete</span></td>
+                </tr>
+
+                <tr><th>Sold Price</th><td>${{ auction.sold_price | number : '1.2-2' }}</td></tr>
+                <tr><th>Transaction ID</th><td>{{ auction.transaction_id }}</td></tr>
+                <tr><th>Payment Mode</th><td>{{ auction.payment_mode }}</td></tr>
+                <tr><th>Transaction Date</th><td>{{ auction.transaction_date }}</td></tr>
+                
+              </tbody>
+            </table>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        
+    </div>
+
+    <div class="col-xs-5">
+      
+
+      <div class="box box-success">
+        <div class="box-header">
+          <h3 class="box-title">Bids</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+              <h1>{{ bids?.length }} bids</h1>
+          <table id="example2" class="table table-bordered table-hover">
+            <thead>
+            <tr>
+              <th>Sr.no</th>
+              <th>User</th>
+              <th>Bid</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let bid of bids; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td><a routerLink="/admin/users/view/{{ bid.user._id }}" target="_blank">{{ bid.user[0].firstname | titlecase }} {{ bid.user[0].lastname | titlecase }}</a></td>
+                <td>${{ bid.bids.price | number : '1.2-2' }}</td>
+              </tr>
+              </tbody>
+            <tfoot>
+            <tr>
+              <th>Sr.no</th>
+              <th>User</th>
+              <th>Bid</th>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      
+  </div>
+</div>
+</section>

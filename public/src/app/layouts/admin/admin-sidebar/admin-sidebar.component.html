@@ -1,0 +1,88 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="{{ currentUser.profilepic }}" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>{{ currentUser.firstname | titlecase }} {{ currentUser.lastname | titlecase }}</p>
+          <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
+        </div>
+      </div>
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MAIN NAVIGATION</li>
+
+        <li>
+            <a routerLink="/admin/dashboard">
+              <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            </a>
+          </li>
+
+        <li>
+          <a routerLink="/admin/users">
+            <i class="fa fa-users"></i> <span>Users</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/admin/plans">
+            <i class="fa fa-tasks"></i> <span>Subscription Plans</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/admin/video-categories">
+            <i class="fa fa-cube"></i> <span>Categories</span>
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/admin/video-subcategories">
+            <i class="fa fa-cubes"></i> <span>Subcategories</span>
+          </a>
+        </li>
+
+        <li>
+            <a routerLink="/admin/videos">
+              <i class="fa fa-video-camera"></i> <span>Videos</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/admin/subscriptions">
+              <i class="fa fa-video-camera"></i> <span>Subscriptions</span>
+            </a>
+        </li>
+
+        <li>
+            <a routerLink="/admin/auctions">
+              <i class="fa fa-video-camera"></i> <span>Auctions</span>
+            </a>
+        </li>
+
+        <li>
+          <a routerLink="/admin/faq">
+            <i class="fa fa-question"></i> <span>FAQ</span>
+          </a>
+        </li>
+
+        <li>
+            <a routerLink="/admin/static-pages">
+              <i class="fa fa-book"></i> <span>Static pages</span>
+            </a>
+          </li>
+
+        <li>
+          <a routerLink="/admin/contact-us">
+            <i class="fa fa-phone"></i> <span>Contact Us</span>
+          </a>
+        </li>
+
+        
+
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>

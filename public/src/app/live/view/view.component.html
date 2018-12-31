@@ -1,0 +1,12 @@
+<h1 *ngIf="username" >{{ username | uppercase }}</h1>
+<div id="initiator-container">
+    <div #subscriberDiv style="float:left;"></div>
+</div>
+<p>{{ alertmsg }}</p>
+
+<div class="chat_section" style="float:right;">
+    <div id="history" style="height: 300px; width: 200px; border: 1px solid #000;"></div>
+    <form>
+        <input type="text" placeholder="Input your text here" id="msgTxt">
+    </form>
+</div>

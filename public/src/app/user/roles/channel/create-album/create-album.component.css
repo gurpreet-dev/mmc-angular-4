@@ -1,0 +1,113 @@
+.profile-sec .content-part{
+	padding-bottom:50px;
+	background-color:#141414;
+}
+.profile-sec .content-part .inner-sec .head-sec{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	padding:15px 0px 15px 35px;
+	border-bottom:1px solid rgba(255, 255, 255, 0.10);
+	margin-bottom:15px;
+	position:relative;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div{
+	height:19px;
+	width:19px;
+	position:absolute;
+	left:0;
+	top:15px;
+	bottom:15px;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div img{
+	height:100%;
+}
+.profile-sec .content-part .inner-sec .head-sec .gallery-link a{
+	text-decoration:none;
+	display:inline-block;
+	padding:7px 15px;
+	background-color:#f8f8f8;
+	border-radius:2px;
+	text-transform:uppercase;
+	color:rgba(0, 0, 0, 0.55);
+	margin-left:4px;
+}
+.profile-sec .content-part .inner-sec .head-sec .gallery-link a.active{
+	background-color:#611313;
+	color:#ffffff;
+}
+.profile-sec .content-part .inner-sec .body-sec .form-group .form-control{
+	font-size: 14px;
+    color: #8c8c8c;
+    height: 35px;
+    border: 1px solid #e5e6e7;
+    border-radius: 2px;
+}
+/* Changes For Upload Button */
+
+.profile-sec .content-part .inner-sec .body-sec .form-group .file-outer{
+	position:relative;
+	min-height:250px;
+}
+.profile-sec .content-part .inner-sec .body-sec .form-group .file-outer .form-control{
+	height:250px;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:9;
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+.profile-sec .content-part .inner-sec .body-sec .form-group .file-outer span.custome-file{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	width:100%;
+	height:250px; 
+	background-color:#ffffff;
+	border: 1px solid #e5e6e7;
+	border-radius:2px;
+	position:absolute;
+	left:0;
+	top:0;
+}
+/*=========================================================*/
+
+.profile-sec .content-part .inner-sec .body-sec .form-group .file-outer span.custome-file img{
+	width:50%;
+}
+.profile-sec .content-part .inner-sec .body-sec .btn-sec{
+	text-align:right;
+}
+.profile-sec .content-part .inner-sec .body-sec .btn-sec .btn-sub{
+	border: none;
+    border-radius: 2px;
+    padding: 7px 15px;
+    background-color: #611313;
+    font-size: 14px;
+    font-family: 'robotobold';
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.profile-sec .content-part .inner-sec .body-sec .btn-sec .btn-sub:hover{
+	background-color:#470d0d;
+}
+.profile-sec .content-part .inner-sec .body-sec .image-loader{
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.profile-sec .timeline-nav{
+	padding:0px;
+	background-color:#080808;
+}
+.profile-sec .timeline-nav ul.navbar-nav li a{
+	padding:15px 30px;
+	text-transform:uppercase;
+	color:#ffffff;
+}
+.profile-sec .timeline-nav ul.navbar-nav li.active a{
+	background-color:#141414;
+}

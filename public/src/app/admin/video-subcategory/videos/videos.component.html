@@ -1,0 +1,62 @@
+<section class="content-header">
+  <h1>
+    <strong>{{ title }}</strong> videos
+  </h1>
+</section>
+
+  <!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+
+
+        <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Sr.no</th>
+                  <th>Title</th>
+                  <th>Size</th>
+                  <th>Duration</th>
+                  <th>User</th>
+                  <th>Created</th>
+                  <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let video of videos; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ video.data.video.title | titlecase }}</td>
+                  <td>{{ video.data.video.size }}</td>
+                  <td>{{ video.data.video.duration }}</td>
+                  <td><a routerLink="/admin/users/view/{{ video.userdata._id[0] }}">{{ video.userdata.firstname[0] | titlecase }} {{ video.userdata.lastname[0] | titlecase }}</a></td>
+                  <td>{{ video.data.video.createdAt | date:"dd-MMMM-yyyy h:m a" }}</td>
+                  <td>
+                    <a class="btn btn-success btn-xs" routerLink='/admin/videos/view/{{video.data.video._id}}'>View</a>
+                    <!-- <a class="btn btn-info btn-xs" routerLink='/admin/video-subcategories/videos/{{category.subcategories._id}}'>Videos</a> -->
+                  </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Sr.no</th>
+                  <th>Title</th>
+                  <th>SIze</th>
+                  <th>Duration</th>
+                  <th>User</th>
+                  <th>Created</th>
+                  <th>Actions</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+
+    </div>
+  </div>
+</section>
+        

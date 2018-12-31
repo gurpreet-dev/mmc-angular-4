@@ -1,0 +1,16 @@
+<h1>Broadcast here</h1>
+
+<div class="btn01">  
+    <button *ngIf="start_button" (click)="start_video()">Start video</button>
+     <button *ngIf="stop_button" (click)="disconnect_video()">Disconnect</button>
+</div>
+<div id="initiator-container" style="float:left;">
+    <div #publisherDiv></div>
+</div>
+
+<div class="chat_section" style="float:right;">
+    <div id="history" style="height: 300px; width: 200px; border: 1px solid #000;"></div>
+    <form>
+        <input type="text" placeholder="Input your text here" id="msgTxt">
+    </form>
+</div>

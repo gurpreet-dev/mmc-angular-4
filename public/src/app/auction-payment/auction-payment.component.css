@@ -1,0 +1,301 @@
+.profile-sec .cover-sec{
+	display:block;
+	position:relative;
+	height:350px;
+	overflow:hidden;
+}
+.profile-sec .cover-sec img{
+	position:absolute;
+	left:0;
+	top:0;
+	min-height:100%;
+	min-width:100%;
+}
+.profile-sec .avatar-sec{
+	position:relative;
+	background-color:#080808;
+}
+.profile-sec .avatar-sec .avatar-inner{
+	position:relative;
+	min-height:105px;
+	padding-left:190px;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:flex-start;
+}
+.profile-sec .avatar-sec .avatar-inner .avatar-wrapper{
+	display:block;
+	position:absolute;
+	left:0;
+	top:-85px;
+	height:175px;
+	width:175px;
+	padding:5px 5px;
+	background-color:#141414;
+	border-radius:4px;
+	overflow:hidden;
+}
+.profile-sec .avatar-sec .avatar-inner .avatar-wrapper .image-wrapper{
+	width:100%;
+	height:100%;
+	background-color:#ffffff;
+	border-radius:4px;
+}
+.profile-sec .avatar-sec .avatar-inner .avatar-wrapper .image-wrapper img{
+	min-height:100%;
+	min-width:100%;
+}
+.profile-sec .avatar-sec .avatar-inner .profile-name h5{
+	text-transform:uppercase;
+}
+.profile-sec .avatar-sec .avatar-inner .btn-sec{
+	margin-left:auto;
+}
+.profile-sec .avatar-sec .avatar-inner .btn-sec .btn-edit{
+	border:none;
+	border-radius:2px;
+	padding: 7px 15px;
+    background-color: #611313;
+    font-size: 14px;
+    font-family: 'robotobold';
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.profile-sec .avatar-sec .avatar-inner .btn-sec .btn-edit:hvoer{
+	background-color:#470d0d;
+}
+.profile-sec .timeline-nav{
+	padding:0px;
+	background-color:#080808;
+}
+.profile-sec .timeline-nav ul.navbar-nav li a{
+	padding:15px 30px;
+	text-transform:uppercase;
+	color:#ffffff;
+}
+.profile-sec .timeline-nav ul.navbar-nav li.active a{
+	background-color:#141414;
+}
+.profile-sec .content-part{
+	padding-bottom:50px;
+	background-color:#141414;
+}
+.profile-sec .content-part .inner-sec .head-sec{
+	display:flex;
+	flex-wrap:wrap;
+	padding:15px 0px 15px 35px;
+	border-bottom:1px solid rgba(255, 255, 255, 0.10);
+	margin-bottom:15px;
+	position:relative;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div{
+	height:19px;
+	width:19px;
+	position:absolute;
+	left:0;
+	top:15px;
+	bottom:15px;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div img{
+	height:100%;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card{
+	background-color:#ffffff;
+	border-radius:2px;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-head{
+	padding:30px 30px;
+	border-bottom:1px solid #cfcfcf
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-head .img-sec{
+	display:block;
+	width:45px;
+	margin:auto;
+	margin-bottom:15px;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-head .img-sec img{
+	width:100%;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-head .title-sec h5{
+	text-transform:uppercase;
+	color:#a1a1a1;
+	text-align:center;
+	margin-bottom:5px;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-head .title-sec h4{
+	text-transform:uppercase;
+	color:#141414;
+	text-align:center;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-head .title-sec h4 sub{
+	font-size:14px;
+	font-family: 'robotoregular';
+	bottom:0px;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-body ul{
+	margin:0px;
+	padding:0px;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-body ul li{
+	list-style-type:none;
+	padding:15px 25px;
+	border-bottom:1px solid #f1f1f1;
+	font-size:14px;
+	font-family: 'robotolight';
+	color:#afafaf;
+	position:relative;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-body ul li span{
+	display:block;
+	height:15px;
+	width:15px;
+	position:absolute;
+	top:0px;
+	right:25px;
+	bottom:0px;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-body ul li span img{
+	width:100%;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-body .btn-sec{
+	padding:25px 25px;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-body .btn-sec .form-check{
+	padding:0px;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-body .btn-sec .form-check input[type="radio"]{
+	left:0;
+	top:0;
+	margin:0px;
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-body .btn-sec .form-check label{
+	display:block;
+	height:35px;
+	background-color:#f8f8f8;
+	border:1px solid #e5e6e7;
+	border-radius:2px;
+	text-align:center;
+	line-height:35px;
+	font-size:14px;
+	font-family: 'robotobold';
+	color:#8c8c8c;
+	text-transform:uppercase;
+	cursor:pointer;
+}
+.profile-sec .content-part .inner-sec .body-sec .plan-card .plan-body .btn-sec .form-check input[type="radio"]:checked + label{
+	background-color:#611313;
+	color:#ffffff;
+	border-color:#611313;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner{
+	margin-top:15px;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .payment-head{
+	padding:10px 15px;
+	background-color:#611313;
+	border-radius:2px;
+	margin-bottom:15px;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .payment-head h6{
+	font-size:14px;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec ul{
+	border:none;
+	background-color:#ffffff;
+	border-radius:2px;
+	overflow:hidden;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec ul li{
+	margin:0px;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec ul li a{
+	padding:0px;
+	border:none;
+	border-radius:0px;
+	height:150px;
+	width:150px;
+	font-size:19px;
+	color:#c9c9c9;
+	text-align:center;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	position:relative;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec ul li a.active:after{
+	position:absolute;
+	content:'';
+	height:5px;
+	width:100%;
+	background-color:#611313;
+	left:0;
+	bottom:0px;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec ul li a span{
+	display:block;
+	height:45px;
+	width:45px;
+	margin:auto;
+	margin-bottom:15px;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec ul li a span img{
+	width:100%;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec .tab-content{
+	padding:15px 0px 0px 0px;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec .tab-content .tab-pane form .input-group label{
+	display:block;
+	width:100%;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec .tab-content .tab-pane form .input-group .input-group-prepend{
+	margin:0px;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec .tab-content .tab-pane form .input-group .input-group-prepend span.input-group-text{
+	justify-content:center;
+	padding:0px;
+	height:35px;
+	width:35px;
+	background-color:#ffffff;
+	border-top-left-radius:2px;
+	border-bottom-left-radius:2px;
+	border-color:#e5e6e7;
+	border-right:none;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec .tab-content .tab-pane form .input-group .input-group-prepend span.input-group-text img{
+	height:15px;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec .tab-content .tab-pane form .input-group .form-control{
+	font-size:14px;
+	color:#8c8c8c;
+	height:35px;
+	background-color:#ffffff;
+	border-top-right-radius:2px;
+	border-bottom-right-radius:2px;
+	border-color:#e5e6e7;
+	border-left:none;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec .tab-content .tab-pane .btn-sec.top-gap{
+	margin-top: 50px;
+}
+.profile-sec .content-part .inner-sec .body-sec .payment-inner .tab-sec .tab-content .tab-pane .btn-sec .btn-sub{
+	display:block;
+	width:100%;
+	border: none;
+    border-radius: 2px;
+    padding: 7px 15px;
+    background-color: #611313;
+    font-size: 14px;
+    font-family: 'robotobold';
+    color: #ffffff;
+    text-transform: uppercase;
+}
+span.form-error{
+	display: block;
+	width: 100%;
+}

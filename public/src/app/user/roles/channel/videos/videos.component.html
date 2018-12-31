@@ -1,0 +1,79 @@
+<section class="profile-sec">
+  <nav class="navbar navbar-expand-lg navbar-light timeline-nav">
+    <div class="container-fluid">		
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#timeline-menu" aria-controls="timeline-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="timeline-menu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/cprofile">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/cprofile/albums">Photos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/cprofile/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/cprofile/live-broadcast">Live Video</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/cprofile/payment">Payment</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/subscription-plans">Subscription plans</a>
+                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/cprofile/auctions">Auctions</a>
+                            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="content-part">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="inner-sec">					
+          <div class="head-sec">
+            <span class="icon-div"><img src="../../assets/images/video-icon.svg" alt="Icon"></span>
+            <h5>Videos</h5>
+            <div class="gallery-link ml-auto">
+              <a routerLink="/cprofile/upload-video">Upload Videos</a>
+            </div>
+          </div>
+          <div class="body-sec">
+            <div class="row">
+
+
+              <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let video of videos">
+                <div class="video-inner">
+                  <div class="thubnail-outer">
+                    <a routerLink="/video/{{ video.subcategories.videos._id }}">
+                      <img src="{{ video.subcategories.videos.thumbnail }}" alt="Thumbnail">
+                      <div class="overlay">
+                        <span><img src="../../assets/images/overlay-video-play.svg" alt="play-icon"></span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="vd-title">
+                    <a routerLink="/video/{{ video.subcategories.videos._id }}">
+                      <h6>{{ video.subcategories.videos.title | titlecase }}</h6>
+                    </a>
+                    <div class="vd-info">
+                      <span class="duration">{{ video.subcategories.videos.createdAt | timeAgo }}</span>
+                      <span class="views ml-auto">{{ video.subcategories.videos.views }} Views</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

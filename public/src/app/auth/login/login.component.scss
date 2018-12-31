@@ -1,0 +1,168 @@
+.signin-sec{
+	padding:105px 0px 50px 0px;
+	position:relative;
+	overflow:hidden;
+}
+.signin-sec .bg-image{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	width:100%;
+	margin:auto;
+}
+.signin-sec .overlay{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0, 0, 0, 0.35);
+}
+.signin-sec .form-wrapper{
+	background-color:rgba(255, 255, 255, 0.15);
+	border-radius:4px;
+}
+.signin-sec .form-wrapper .form-header{
+	padding:85px 30px 0px 30px;
+	margin-bottom:35px;
+	position:relative;
+}
+.signin-sec .form-wrapper .form-header .avatar-sec{
+	height: 110px;
+    width: 110px;
+    background-color: #611313;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 110px;
+    position: absolute;
+    left: 0;
+    top: -55px;
+    right: 0;
+    margin: auto;
+}
+.signin-sec .form-wrapper .form-header .avatar-sec img{
+	height:55px;
+}
+.signin-sec .form-wrapper .form-header h1{
+	text-transform:uppercase;
+	text-align:center;
+	margin-bottom:15px;
+}
+.signin-sec .form-wrapper .form-header p{
+	text-align:center;
+	color:#ffffff;
+}
+.signin-sec .form-wrapper .form-body{
+	padding:0px 30px;
+	margin-bottom:55px;
+}
+.signin-sec .form-wrapper .form-body .form-group .form-control{
+	font-size:14px;
+	color:#8c8c8c;
+	height:35px;
+	border:1px solid #e5e6e7;
+	border-radius:2px;
+}
+.signin-sec .form-wrapper .form-body .form-group .form-control::-webkit-input-placeholder,
+.signin-sec .form-wrapper .form-body .form-group .form-control::-moz-placeholder,
+.signin-sec .form-wrapper .form-body .form-group .form-control:-ms-input-placeholder,
+.signin-sec .form-wrapper .form-body .form-group .form-control:-moz-placeholder{
+	color:#8c8c8c;
+}
+.signin-sec .form-wrapper .form-body .form-group.pass-group{
+	padding-right: 85px;
+    position: relative;
+}
+.signin-sec .form-wrapper .form-body .form-group.pass-group .form-control{
+	border-top-right-radius:0px;
+	border-bottom-right-radius:0px;
+}
+.signin-sec .form-wrapper .form-body .form-group a{
+	text-decoration:none;
+	display:inline-block;
+	height:35px;
+	width:85px;
+	line-height:35px;
+	text-align:center;
+	background-color:#f8f8f8;
+	border:1px solid #e5e6e7;
+	border-top-right-radius:2px;
+	border-bottom-right-radius:2px;
+	text-transform:uppercase;
+	color:#611313;
+	position:absolute;
+	top:0px;
+	right:0px;
+}
+.signin-sec .form-wrapper .form-body .form-check{
+	padding-left:20px;
+	position:relative;
+}
+.signin-sec .form-wrapper .form-body .form-check label{
+	margin:0px;
+}
+.signin-sec .form-wrapper .form-body .form-check input[type="checkbox"]{
+	position:absolute;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	margin:auto;
+	z-index:9;
+	opacity:0;
+}
+.signin-sec .form-wrapper .form-body .form-check .custom-check{
+	display:inline-block;
+	position:absolute;
+	height:15px;
+	width:15px;
+	background-color:transparent;
+	border:2px solid #fff;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	margin:auto;
+}
+.signin-sec .form-wrapper .form-body .form-check input[type="checkbox"]:checked + .custom-check:after{
+	position:absolute;
+	content:'';
+	height:7px;
+	width:7px;
+	background-color:#fff;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	margin:auto;
+}
+.signin-sec .form-wrapper .form-body .btn-sec{
+	text-align:right;
+}
+.signin-sec .form-wrapper .form-body .btn-sec .btn-submit{
+	border: none;
+    border-radius: 2px;
+    padding: 7px 15px;
+    background-color: #611313;
+    font-size: 14px;
+    font-family: 'robotobold';
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.signin-sec .form-wrapper .form-body .btn-sec .btn-submit:hover{
+	background-color:#470d0d;
+}
+.signin-sec .form-wrapper .form-footer{
+	padding:35px 30px;
+	border-top:1px solid #8c8c8c;
+}
+.signin-sec .form-wrapper .form-footer p{
+	text-align:center;
+}
+.signin-sec .form-wrapper .form-footer p a{
+	text-decoration:underline;
+	font-family: 'robotobold';
+	color:#ffffff;
+}

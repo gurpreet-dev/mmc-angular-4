@@ -1,0 +1,57 @@
+<section class="content-header">
+    <h1>
+      Video Categories <a routerLink="/admin/video-categories/add" class="btn btn-warning">Add category</a>
+    </h1>
+  </section>
+  
+    <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+  
+  
+          <div class="box">
+              <!-- /.box-header -->
+              <div class="box-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>Sr.no</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let category of categories; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ category.title }}</td>
+                    <td>
+                      <span class="label label-success" *ngIf="category.status == '1'">Active</span>
+                      <span class="label label-danger" *ngIf="category.status == '0'">Inactive</span>
+                    </td>
+                    <td>
+                      <a class="btn btn-success btn-xs" routerLink='/admin/video-categories/edit/{{category._id}}'>Edit</a>
+                      <!-- <button type="button" class="btn btn-danger btn-xs" (click) ='delete(category._id)'>Delete</button> -->
+                    </td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>Sr.no</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+  
+  
+      </div>
+    </div>
+  </section>
+          
+  

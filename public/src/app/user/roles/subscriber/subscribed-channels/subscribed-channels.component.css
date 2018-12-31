@@ -1,0 +1,166 @@
+.profile-sec .cover-sec{
+	display:block;
+	position:relative;
+	height:350px;
+	overflow:hidden;
+}
+.profile-sec .cover-sec img{
+	position:absolute;
+	left:0;
+	top:0;
+	min-height:100%;
+	min-width:100%;
+}
+.profile-sec .avatar-sec{
+	position:relative;
+	background-color:#080808;
+}
+.profile-sec .avatar-sec .avatar-inner{
+	position:relative;
+	min-height:105px;
+	padding-left:190px;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:flex-start;
+}
+.profile-sec .avatar-sec .avatar-inner .avatar-wrapper{
+	display:block;
+	position:absolute;
+	left:0;
+	top:-85px;
+	height:175px;
+	width:175px;
+	padding:5px 5px;
+	background-color:#141414;
+	border-radius:4px;
+	overflow:hidden;
+}
+.profile-sec .avatar-sec .avatar-inner .avatar-wrapper .image-wrapper{
+	width:100%;
+	height:100%;
+	background-color:#ffffff;
+	border-radius:4px;
+}
+.profile-sec .avatar-sec .avatar-inner .avatar-wrapper .image-wrapper img{
+	min-height:100%;
+	min-width:100%;
+}
+.profile-sec .avatar-sec .avatar-inner .profile-name h5{
+	text-transform:uppercase;
+}
+.profile-sec .avatar-sec .avatar-inner .btn-sec{
+	margin-left:auto;
+}
+.profile-sec .avatar-sec .avatar-inner .btn-sec .btn-edit{
+	border:none;
+	border-radius:2px;
+	padding: 7px 15px;
+    background-color: #611313;
+    font-size: 14px;
+    font-family: 'robotobold';
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.profile-sec .avatar-sec .avatar-inner .btn-sec .btn-edit:hvoer{
+	background-color:#470d0d;
+}
+.profile-sec .timeline-nav{
+	padding:0px;
+	background-color:#080808;
+}
+.profile-sec .timeline-nav ul.navbar-nav li a{
+	padding:15px 30px;
+	text-transform:uppercase;
+	color:#ffffff;
+}
+.profile-sec .timeline-nav ul.navbar-nav li.active a{
+	background-color:#141414;
+}
+.profile-sec .content-part{
+	padding-bottom:50px;
+	background-color:#141414;
+}
+.profile-sec .content-part .inner-sec .head-sec{
+	display:flex;
+	flex-wrap:wrap;
+	padding:15px 0px 15px 35px;
+	border-bottom:1px solid rgba(255, 255, 255, 0.10);
+	margin-bottom:15px;
+	position:relative;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div{
+	height:19px;
+	width:19px;
+	position:absolute;
+	left:0;
+	top:15px;
+	bottom:15px;
+	margin:auto;
+}
+
+.profile-sec .content-part .inner-sec .head-sec span.icon-div img{
+	height:100%;
+}
+.profile-sec .content-part .inner-sec .body-sec #no-more-tables th{
+	text-transform:uppercase;
+}
+.profile-sec .content-part .inner-sec .body-sec #no-more-tables th,
+.profile-sec .content-part .inner-sec .body-sec #no-more-tables td{
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.profile-sec .content-part .inner-sec .body-sec #no-more-tables td span{
+	display:inline-block;
+	padding:2px 10px;
+	background-color:#188012;
+}
+.profile-sec .content-part .inner-sec .body-sec #no-more-tables td span.expiried{
+	background-color:#611313;
+}
+.profile-sec .content-part .inner-sec .body-sec #no-more-tables thead tr{
+	background-color:#611313;
+}
+.profile-sec .content-part .inner-sec .body-sec #no-more-tables tbody tr{
+	background-color:#353535;
+}
+.profile-sec .content-part .inner-sec .body-sec #no-more-tables tbody tr:nth-of-type(odd){
+	background-color:#464646;
+}
+label, .dataTables_info, .dataTables_paginate .paginate_button{
+	color: #fff !important;
+}
+@media only screen and (max-width: 800px) {
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables table, 
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables thead, 
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables tbody, 
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables th, 
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables td, 
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables tr { 
+		display: block; 
+	}
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables tr { border: 1px solid rgba(255, 255, 255, 0.1); }
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables td { 
+		border: none;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+	.profile-sec .content-part .inner-sec .body-sec #no-more-tables td:before { content: attr(data-title); }
+}

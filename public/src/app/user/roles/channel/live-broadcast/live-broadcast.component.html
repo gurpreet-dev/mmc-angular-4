@@ -1,0 +1,94 @@
+<section class="profile-sec">
+    <nav class="navbar navbar-expand-lg navbar-light timeline-nav">
+        <div class="container-fluid">		
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#timeline-menu" aria-controls="timeline-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="timeline-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/albums">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/videos">Videos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" routerLink="/cprofile/live-broadcast">Live Video</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/payment">Payment</a>
+					</li>
+					<li class="nav-item">
+							<a class="nav-link" routerLink="/cprofile/subscription-plans">Subscription plans</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" routerLink="/cprofile/auctions">Auctions</a>
+						</li>
+                </ul>
+            </div>
+        </div>
+  </nav>
+	<div class="content-part">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="inner-sec">					
+						<div class="head-sec">
+							<span class="icon-div"><img src="../../assets/images/paymentmethod-icon.svg" alt="Icon"></span>
+							<h5>Live Broadcasting</h5>
+							<div class="gallery-link ml-auto">
+								<button type="button" class="btn btn-default btn-live" *ngIf="start_button" (click)="start_video()">{{ start_button_label }}</button>
+								<button type="button" class="btn btn-default btn-live" *ngIf="stop_button" (click)="disconnect_video()">End Broadcasting</button>
+							</div>
+						</div>
+						<div class="body-sec">
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+									<div class="broadcasting-sec">
+										<div class="broadcasting-body">
+											<div #publisherDiv>
+                        <img src="../../assets/images/offline-channel.png" *ngIf="offline">
+                      </div>
+										</div>
+										<div class="broadcast-footer">
+											<div class="like-video-sec">
+												<span class="heart"><img src="../../assets/images/heart-icon.svg" alt="Icon"></span>
+												<span class="total"><span id="viewers">0</span> Viewers</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+									<div class="live-chat-sec">
+										<div class="chat-head">
+											<h6>Chat</h6>
+										</div>
+										<div class="chat-body" id="history">
+											
+										</div>
+										<div class="chat-footer">
+											<div class="inner-wrapper">											
+												<div class="emoji-sec">
+													<!-- <span><img src="../../assets/images/emoji-icon.svg" alt="Emoji-Icon"></span> -->
+												</div>
+												<form class="form-horizontal" name="" method="" action="" id="chat-form">
+													<div class="form-group">
+														<input type="text" class="form-control" name="" value="" placeholder="Type your message here....." id="msgTxt">
+														<button type="submit" class="btn btn-default btn-sub"><img src="../../assets/images/send-button-icon.svg" alt="Icon"></button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

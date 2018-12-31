@@ -1,0 +1,171 @@
+.profile-sec .timeline-nav{
+	padding:0px;
+	background-color:#080808;
+}
+.profile-sec .timeline-nav ul.navbar-nav li a{
+	padding:15px 30px;
+	text-transform:uppercase;
+	color:#ffffff;
+}
+.profile-sec .timeline-nav ul.navbar-nav li.active a{
+	background-color:#141414;
+}
+.profile-sec .content-part{
+	padding-bottom:50px;
+	background-color:#141414;
+}
+.profile-sec .content-part .inner-sec .head-sec{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	padding:15px 0px 15px 35px;
+	border-bottom:1px solid rgba(255, 255, 255, 0.10);
+	margin-bottom:15px;
+	position:relative;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div{
+	height:19px;
+	width:19px;
+	position:absolute;
+	left:0;
+	top:15px;
+	bottom:15px;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec .head-sec span.icon-div img{
+	height:100%;
+}
+.profile-sec .content-part .inner-sec .inner-sec .thubnail-outer{
+	position: relative;
+	overflow: hidden;
+	height: 290px;
+	margin-bottom: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #0d0d0d;
+}
+.profile-sec .content-part .inner-sec .inner-sec .thubnail-outer img{
+	width:auto;
+	max-height: 100%;
+}
+.profile-sec .content-part .inner-sec .inner-sec .thubnail-outer .overlay{
+	display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.profile-sec .content-part .inner-sec .inner-sec .thubnail-outer:hover .overlay{
+	display:block;
+}
+.profile-sec .content-part .inner-sec .inner-sec .thubnail-outer .overlay a{
+	position:absolute;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+}
+.profile-sec .content-part .inner-sec .inner-sec .thubnail-outer .overlay span{
+	display: block;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.profile-sec .content-part .inner-sec .inner-sec .thubnail-outer .overlay span img{
+	height:100%;
+}
+.profile-sec .content-part .inner-sec .inner-sec .thubnail-outer .overlay a.favourited-icon{
+	left:auto;
+	top:10px;
+	right:10px;
+	bottom:auto;
+}
+.profile-sec .content-part .inner-sec .inner-sec .thubnail-outer .overlay a.favourited-icon img{
+	width:17px;
+}
+.profile-sec .content-part .inner-sec .inner-sec .vd-title{
+	padding: 5px 0px;
+}
+.profile-sec .content-part .inner-sec .inner-sec .vd-title a{
+	text-decoration: none;
+    display: block;
+}
+.profile-sec .content-part .inner-sec .inner-sec .vd-title a h6{
+	font-size: 14px;
+    margin-bottom: 5px;
+}
+.profile-sec .content-part .inner-sec .inner-sec .vd-title .vd-info{
+	display: flex;
+}
+.profile-sec .content-part .inner-sec .inner-sec .vd-title .vd-info span{
+	font-size:12px;
+}
+.profile-sec .content-part .inner-sec .body-sec .image-wrapper{
+	position:relative;
+	overflow:hidden;
+	height: 290px;
+	margin-bottom: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #0d0d0d;
+}
+.profile-sec .content-part .inner-sec .body-sec .image-wrapper img{
+	width:auto;
+	max-height: 100%;
+}
+.profile-sec .content-part .inner-sec .body-sec .image-wrapper .overlay{
+	display:none;
+	position:absolute;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+.profile-sec .content-part .inner-sec .body-sec .image-wrapper:hover .overlay{
+	display:block;
+}
+.profile-sec .content-part .inner-sec .body-sec .image-wrapper .overlay a{
+	position:absolute;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+}
+.profile-sec .content-part .inner-sec .body-sec .image-wrapper .overlay a span{
+	display:block;
+	height:45px;
+	width:45px;
+	background-color:#ffffff;
+	border-radius:50%;
+	text-align:center;
+	line-height:45px;
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+}
+.profile-sec .content-part .inner-sec .body-sec .image-wrapper .overlay a span img{
+	width:25px;
+}
+.profile-sec .content-part .inner-sec .body-sec .image-wrapper .overlay a.favourited{
+	left:auto;
+	top:10px;
+	right:10px;
+	bottom:auto;
+	z-index:9;
+}
+.profile-sec .content-part .inner-sec .body-sec .image-wrapper .overlay a.favourited img{
+	width:17px;
+}

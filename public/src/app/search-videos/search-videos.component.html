@@ -1,0 +1,72 @@
+<section class="hm-content">
+	<div class="container-fluid">
+		<div class="row">		
+			<div class="side-bar-menu">
+				<div class="side-bar-heading">
+					<h5>All Sex Videos</h5>
+				</div>
+				<!-- <ul class="menu-bar">
+					<li><a href="#">New Models</a></li>
+					<li><a href="#">My Favorites</a></li>
+					<li><a href="#">SPY on Shows</a></li>
+				</ul> -->
+
+
+
+				<ul class="menu-bar" *ngFor="let category of categories">
+					<div class="menu-bar-heading">
+						<h6>{{ category.title }}</h6>
+						<img src="../../assets/images/accordia-arrow.svg">
+					</div>
+					<ng-container *ngFor="let subcategory of category.subcategories">
+					<li *ngIf="subcategory.status == '1'"><a routerLink="/category/{{ subcategory.slug }}">{{ subcategory.title }} <span>{{ subcategory.videos.length }}</span></a></li>
+					</ng-container>
+				</ul>
+
+				<!-- <div class="btn-sec">
+					<a href="#">Show More Tags</a>
+				</div> -->
+			</div><!--/. Side Bar End Here -->
+			<div class="content-sec">
+				<div class="head-sec">
+					<h5>{{ video_count }} results found for "{{ term }}"</h5>
+				</div>
+				<div class="content-outer">
+					<div class="row">
+
+
+								<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" *ngFor="let video of videos">
+									<div class="inner-sec">
+										<div class="thubnail-outer">
+											<a routerLink="/video/{{ video._id }}">
+												<img src="{{ video.subcategories.videos.thumbnail }}">
+												<div class="overlay">
+													<span><img src="../../assets/images/overlay-video-play.svg"></span>
+												</div>
+											</a>
+										</div>
+										<div class="vd-title">
+                      <a routerLink="/video/{{ video._id }}"><h6>{{ video.subcategories.videos.title | titlecase }}</h6></a>
+                      <span class="timing">{{ video.subcategories.videos.duration }}</span>
+											<div class="vd-info">
+												<span class="duration">{{ video.subcategories.videos.createdAt | dateago }}</span>
+												<span class="views ml-auto">{{ video.subcategories.videos.views }} Views</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngIf="video_count == '0'">
+									<div class="alert alert-warning">
+										No videos found!
+									</div>
+								</div>
+                
+
+								
+					</div>
+				</div><!--/.end here -->
+			</div>
+		</div>
+	</div>
+</section>

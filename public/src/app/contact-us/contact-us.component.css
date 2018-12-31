@@ -1,0 +1,94 @@
+.contact-sec{
+	padding:105px 0px 50px 0px;
+	position:relative;
+	overflow:hidden;
+}
+.contact-sec .bg-image{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+	margin:auto;
+}
+.contact-sec .overlay{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0, 0, 0, 0.35);
+}
+.contact-sec .form-wrapper{
+	background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+}
+.contact-sec .form-wrapper .form-head{
+	padding: 85px 30px 0px 30px;
+    margin-bottom: 35px;
+    position: relative;
+}
+.contact-sec .form-wrapper .form-head .icon-sec{
+	height: 110px;
+    width: 110px;
+	text-align:center;
+	line-height:110px;
+    display: block;
+    margin: auto;
+    background-color: #611313;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: -55px;
+    right: 0;
+}
+.contact-sec .form-wrapper .form-head .icon-sec img{
+	width:55px;
+}
+.contact-sec .form-wrapper .form-head h1{
+	text-transform:uppercase;
+	text-align:center;
+	margin-bottom:15px;
+}
+.contact-sec .form-wrapper .form-head p{
+	text-align:center;
+}
+.contact-sec .form-wrapper .form-body{
+	padding:0px 30px 30px 30px;
+}
+.contact-sec .form-wrapper .form-body .form-group .form-control{
+	font-size: 14px;
+    color: #8c8c8c;
+    height: 35px;
+    border: 1px solid #e5e6e7;
+    border-radius: 2px;
+}
+.contact-sec .form-wrapper .form-body .form-group .form-control::-webkit-input-placeholder,
+.contact-sec .form-wrapper .form-body .form-group .form-control::-moz-placeholder,
+.contact-sec .form-wrapper .form-body .form-group .form-control:-moz-placeholder,
+.contact-sec .form-wrapper .form-body .form-group .form-control:-ms-placeholder{
+	color: #8c8c8c;
+}
+.contact-sec .form-wrapper .form-body .form-group textarea.form-control{
+	height:130px
+}
+.contact-sec .form-wrapper .form-body .btn-sec{
+	text-align:right;
+}
+.contact-sec .form-wrapper .form-body .btn-sec .btn-submit{
+	border: none;
+    border-radius: 2px;
+    padding: 7px 15px;
+    background-color: #611313;
+    font-size: 14px;
+    font-family: 'robotobold';
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.contact-sec .form-wrapper .form-body .btn-sec .btn-submit:hover{
+	background-color:#470d0d;
+}

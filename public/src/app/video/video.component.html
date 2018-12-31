@@ -1,0 +1,40 @@
+<section class="profile-sec">
+    <div class="content-part">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="inner-sec">					
+              <div class="head-sec">
+                <span class="icon-div"><img src="../../assets/images/home-icon.svg" alt="Icon"></span>
+                <h5>{{ video.subcategories.videos.title | titlecase }}</h5>
+              </div>
+              <div class="body-sec">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="video-outer">
+                      <video controls [muted]="true" *ngIf="video.subcategories.videos.video != ''">
+                        <source src="{{ video.subcategories.videos.video }}" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="video-content">
+                      <h6>{{ video.subcategories.videos.title | titlecase }}</h6>
+                      <div class="info">
+                        <span class="views">{{ countviews }} Views</span>
+                        <span class="duration">{{ video.subcategories.videos.createdAt | dateago }}</span>
+                        <span class="views">{{ video.subcategories.videos.duration }}</span>
+                        <span class="views">{{ video.subcategories.videos.size }}</span>
+                      </div>
+                      <p>{{ video.subcategories.videos.description }}</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

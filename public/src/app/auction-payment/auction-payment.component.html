@@ -1,0 +1,187 @@
+<section class="profile-sec">
+  <div class="content-part">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="inner-sec">					
+            <div class="head-sec">
+              <span class="icon-div"><img src="../../assets/images/subscription-plan.svg" alt="Icon"></span>
+              <h5>Auction Payment</h5>
+            </div>
+            <div class="body-sec">
+              <div class="row">
+
+
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                  
+                </div>
+            
+              </div><!-- Subscription Plan Table Section End Here -->
+              <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                  <div class="payment-inner">
+                    <div class="payment-head">
+                      <h6>Payment Methods</h6>
+                    </div>
+                    <div class="tab-sec">
+                      <ul class="nav nav-tabs" id="payment-tab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="credit-card" data-toggle="tab" href="#credit" role="tab" aria-controls="credit" aria-selected="true">
+                            <div class="wrap">
+                              <span><img src="../../assets/images/card-logo.svg" alt="Logo"></span>Credit Card
+                            </div>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="paypal-id" data-toggle="tab" href="#paypal" role="tab" aria-controls="paypal" aria-selected="false">
+                            <div class="wrap">
+                              <span><img src="../../assets/images/paypal-logo.svg" 	alt="Logo"></span>Paypal
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="paymenttab-content">
+                        <div class="tab-pane fade show active" id="credit" role="tabpanel" aria-labelledby="Credit-Card-Tab">
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <form  [formGroup] = "cc_form" (ngSubmit) = "credit_card()" role="form" class="form-horizontal">
+                                <div class="input-group mb-3">
+                                  <label>Card Number</label>
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                      <img src="../../assets/images/input-box-card-icon.svg" alt="Icon">
+                                    </span>
+                                  </div>
+                                  <input type="number" class="form-control" value="" placeholder="XXXX XXXX XXXX XXXX"  formControlName="card_number">
+                                  <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!cc_form.controls['card_number'].valid && cc_form.controls['card_number'].touched">*Please enter valid card number</span>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <label>Select Card Type</label>
+                                    <select class="form-control" formControlName="card_type">
+                                      <option *ngFor="let cardtype of cardtypes" value="{{ cardtype }}">{{ cardtype | titlecase }}</option>
+                                    </select>
+                                    <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!cc_form.controls['card_type'].valid && cc_form.controls['card_type'].touched">*Please select card type</span>
+                                  </div>
+                                <div class="row">
+                                  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                                    <div class="input-group mb-3">
+                                      <label>Expiry Date</label>
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                          <img src="../../assets/images/input-box-card-icon.svg" alt="Icon">
+                                        </span>
+                                      </div>
+                                      <input type="month" class="form-control" placeholder="" formControlName="expire_date">
+                                      <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!cc_form.controls['expire_date'].valid && cc_form.controls['expire_date'].touched">*Please select expiry date</span>
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                    <div class="input-group mb-3">
+                                      <label>CVV</label>
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                          <img src="../../assets/images/input-box-lock-icon.svg" alt="Icon">
+                                        </span>
+                                      </div>
+                                      <input type="password" class="form-control" value="" placeholder="***" formControlName="cvv2">
+                                      <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!cc_form.controls['cvv2'].valid && cc_form.controls['cvv2'].touched">*Please enter cvv</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="btn-sec">
+                                  <input type="button" class="btn btn-default btn-sub" (click) = "credit_card()" value="{{ label_cc_paypal }}" [disabled]="isDisabled">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade show" id="debit" role="tabpanel" aria-labelledby="Debit-Card-Tab">
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                              <form class="form-horizontal" name="" method="" action="">
+                                <div class="input-group mb-3">
+                                  <label>Card Number</label>
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                      <img src="../../assets/images/input-box-card-icon.svg" alt="Icon">
+                                    </span>
+                                  </div>
+                                  <input type="text" class="form-control" name="" value="" placeholder="XXXX XXXX XXXX XXXX">
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="input-group mb-3">
+                                      <label>Expiry Date</label>
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                          <img src="../../assets/images/input-box-card-icon.svg" alt="Icon">
+                                        </span>
+                                      </div>
+                                      <input type="date" class="form-control" name="" value="" placeholder="">
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="input-group mb-3">
+                                      <label>CVV</label>
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                          <img src="../../assets/images/input-box-lock-icon.svg" alt="Icon">
+                                        </span>
+                                      </div>
+                                      <input type="password" class="form-control" name="" value="" placeholder="***">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="btn-sec">
+                                  <input type="submit" class="btn btn-default btn-sub" value="Save and Proceed">
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade show" id="paypal" role="tabpanel" aria-labelledby="Paypal-ID-Tab">
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                              <div class="btn-sec top-gap">
+                                <button class="btn btn-default btn-sub" (click) = "paypal()" [disabled]="isDisabled">{{ label_paypal }}</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="payment-inner">
+                        <div class="payment-head">
+                          <h6>Auction Details</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                      <img src="{{ auction.file }}" width="100%">
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <p><strong>Start Time:</strong> {{ auction.start_date | date: "dd-MM-yyyy" }}</p>
+                        <p><strong>End Time:</strong> {{ auction.end_date | date: "dd-MM-yyyy" }}</p>
+                        <countdown (reached)="expireAuction($event)" units="Days | Hours | Minutes | Seconds"  end="{{ auction.end_date }}"></countdown>
+                        <p><strong>Base Price:</strong> ${{ auction.price | number : '1.2-2' }}</p>
+                        <p *ngIf="highest_bid != '0'"><strong>Amount to be paid:</strong> ${{ highest_bid | number : '1.2-2' }}</p>
+                        <p><strong>Total Bids:</strong> {{ bids }}</p>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

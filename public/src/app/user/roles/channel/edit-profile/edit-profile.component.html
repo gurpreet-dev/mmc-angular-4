@@ -1,0 +1,192 @@
+<section class="profile-sec">
+    <nav class="navbar navbar-expand-lg navbar-light timeline-nav">
+        <div class="container-fluid">		
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#timeline-menu" aria-controls="timeline-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="timeline-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/albums">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/live-broadcast">Live Video</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/payment">Payment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cprofile/subscription-plans">Subscription plans</a>
+                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/cprofile/auctions">Auctions</a>
+                            </li>
+                </ul>
+            </div>
+        </div>
+  </nav>
+  <div class="content-part">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="inner-sec">					
+            <div class="head-sec">
+              <span class="icon-div"><img src="../../assets/images/editprofile.svg" alt="Icon"></span>
+              <h5>Edit Profile</h5>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <form  [formGroup] = "form" (ngSubmit) = "update()" role="form" class="form-horizontal edit-form">
+                  <div class="row">							
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                      <div class="form-group">
+                        <label for="fname">First Name</label>
+                        <input type="text" class="form-control" id="fname" name="firstname" placeholder="First name" formControlName="firstname">
+                        <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['firstname'].valid && form.controls['firstname'].touched">*Please enter first name</span>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                      <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="form-control" id="lname" name="lastname"  placeholder="Last name" formControlName="lastname">
+                        <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['lastname'].valid && form.controls['lastname'].touched">*Please enter last name</span>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                      <div class="form-group">
+                        <label for="emailid">Email ID</label>
+                        <input type="email" class="form-control" id="emailid" name="email"  placeholder="prateek@avainfotech.com" formControlName="email" >
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                      <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone"  placeholder="Phone" formControlName="phone">
+                        <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['phone'].valid && form.controls['phone'].touched">*Please enter phone</span>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                      <div class="form-group">
+                        <label>Gender</label>
+                        <div class="form-check form-check-inline">
+                          <input type="radio" class="form-check-input" id="male" name="gender" value="male" name="gender" formControlName="gender">
+                          <span class="custom-check"></span>
+                          <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input type="radio" class="form-check-input" id="female" name="gender" value="female" name="gender" formControlName="gender">
+                          <span class="custom-check"></span>
+                          <label class="form-check-label" for="female">Female</label>
+                        </div>
+                        <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['gender'].valid && form.controls['gender'].touched">*Please select gender</span>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                      <div class="form-group">
+                        <label for="age">DOB</label>
+                        <input type="date" class="form-control" name="dob" value="" placeholder="" formControlName="dob">
+                        <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['dob'].valid && form.controls['dob'].touched">*Please select dob</span>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                      <div class="form-group">
+                        <label for="age">Country</label>
+                        <select class="form-control" name="country" formControlName="country">
+                          <option *ngFor="let country of countries" value="{{ country}}">{{ country}}</option>
+                        </select>
+                        <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['country'].valid && form.controls['country'].touched">*Please select country</span>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                      <div class="form-group">
+                        <label for="age">Description</label>
+                        <textarea class="form-control" formControlName="description"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                      <div class="btn-sec">
+                        <label>&nbsp;</label>
+                        <input type="submit" class="btn btn-default btn-submit" value="Save">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <div class="inner-sec">					
+            <div class="head-sec">
+              <span class="icon-div"><img src="../../assets/images/editprofile.svg" alt="Icon"></span>
+              <h5>Change Password</h5>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <form  [formGroup] = "form1" (ngSubmit) = "changePassword()" role="form" class="form-horizontal edit-form">
+                  <div class="row">							
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                      <div class="form-group">
+                        <label for="fname">Old Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Old Password" formControlName="opass">
+                        <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form1.controls['opass'].valid && form1.controls['opass'].touched">*Please enter old password</span>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                      <div class="form-group">
+                        <label for="fname">New Password</label>
+                        <input type="password" class="form-control" placeholder="Enter New Password" formControlName="npass">
+                        <span item-content class="form-error text-danger animated  bounceIn myalert"*ngIf="form1.get('npass').hasError('required') && form1.controls['npass'].touched">*Please enter new password</span>
+                        <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form1.get('npass').hasError('minlength') && form1.controls['npass'].touched">
+                            *New Password length must be between 6-10
+                        </span>
+                        <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form1.get('npass').hasError('maxlength') && form1.controls['npass'].touched">
+                                *New Password length must be between 6-10
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                      <div class="form-group">
+                        <label for="fname">Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="Confirm Password" formControlName="cpass">
+                        <span item-content class="form-error text-danger animated  bounceIn myalert"*ngIf="form1.get('cpass').hasError('required') && form1.controls['cpass'].touched">*Please enter confirm password</span>
+                        <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form1.get('cpass').hasError('passwordMismatch') && form1.controls['cpass'].touched">
+                            *Confirm Password does not match with the password
+                        </span>
+                        <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form1.get('cpass').hasError('minlength') && form1.controls['cpass'].touched">
+                            *Confirm Password length must be between 6-10
+                        </span>
+                        <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form1.get('cpass').hasError('maxlength') && form1.controls['cpass'].touched">
+                                *Confirm Password length must be between 6-10
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                      <div class="btn-sec">
+                        <label>&nbsp;</label>
+                        <input type="submit" class="btn btn-default btn-submit" value="Save">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>

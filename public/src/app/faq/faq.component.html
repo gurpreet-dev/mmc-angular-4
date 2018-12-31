@@ -1,0 +1,35 @@
+<section class="faq-sec">
+	<img src="../../assets/images/createanaccountbg.png" class="bg-image" alt="Background">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="accordian-wrapper">
+					<div class="head-sec">
+						<h5>Frequently Asked Question</h5>
+					</div>
+					<div class="body-part">
+						<div class="accordion" id="faq">
+
+
+							<div class="card" *ngFor="let faq of faqs; let i = index">
+								<div class="card-header" id="heading{{i}}">
+									<button class="btn btn-link" type="button" data-toggle="collapse" attr.data-target="#collapse{{ i }}" aria-expanded="true" aria-controls="collapse{{ i }}">
+										Q{{ i+1 }}. {{ faq.question }}
+									</button>
+								</div>
+								<div id="collapse{{ i }}" aria-labelledby="heading{{ i }}" data-parent="#faq" [ngClass]="[i == '0' ? 'collapse show' : 'collapse']">
+									<div class="card-body">
+                      {{ faq.answer }}
+									</div>
+								</div>
+              </div><!--/.Card-->
+              
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

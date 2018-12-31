@@ -1,0 +1,133 @@
+<section class="signup-sec">
+        <img src="../../assets/images/createanaccountbg.png" class="bg-image" alt="Background">
+        <div class="overlay"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="video-sec">
+                        <a href="#">
+                            <img src="../../assets/images/create-an-accountvideo.png">
+                            <div class="overlay">
+                                <span><img src="../../assets/images/overlay-video-play.svg" alt="Play"></span>
+                            </div>
+                        </a>
+                    </div>
+                </div><!--/.video-sec-->
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-wrapper">
+                        <div class="form-header">
+                            <h1>Create account</h1>
+                            <p><span>Basic Details</span></p>
+                        </div>
+                        <div class="form-body">
+                            <form  [formGroup] = "form" (ngSubmit) = "save()" class="form-horizontal signup-form">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="firstname" value="" placeholder="First Name" formControlName="firstname">
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['firstname'].valid && form.controls['firstname'].touched">Please enter first name</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="lastname" value="" placeholder="Last Name" formControlName="lastname">
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['lastname'].valid && form.controls['lastname'].touched">Please enter last name</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" value="" placeholder="Email ID" formControlName="email">
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['email'].valid && form.controls['email'].touched">Please enter valid email</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <input type="tel" class="form-control" name="phone" value="" placeholder="Phone" formControlName="phone">
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['phone'].valid && form.controls['phone'].touched">Please enter valid phone</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" name="password" value="" placeholder="Password" formControlName="password">
+                                            <span item-content *ngIf="form.get('password').touched">
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form.get('password').hasError('required')">
+                                                *This field is required.
+                                            </span>
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form.get('password').hasError('minlength')">
+                                                *Confirm Password length must be between 6-10
+                                            </span>
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form.get('password').hasError('maxlength')">
+                                                *Confirm Password length must be between 6-10
+                                            </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" name="cpassword" value="" placeholder="Confirm password" formControlName="cpassword">
+                                            <span item-content *ngIf="form.get('password').touched">
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form.get('cpassword').hasError('required')">
+                                                *This field is required.
+                                            </span>
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form.get('cpassword').hasError('passwordMismatch')">
+                                                *Confirm Password does not match with the password
+                                            </span>
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form.get('cpassword').hasError('minlength')">
+                                                *Confirm Password length must be between 6-10
+                                            </span>
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert"  *ngIf="form.get('cpassword').hasError('maxlength')">
+                                                *Confirm Password length must be between 6-10
+                                            </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="dateofbirth">Date of Birth</label>
+                                            <input type="date" class="form-control" id="dateofbirth" name="dob" value="" placeholder="07/08/1994" formControlName="dob">
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['dob'].valid && form.controls['dob'].touched">*Please enter dob</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label>Are You?</label>
+                                            <div class="form-check form-check-inline">
+                                                <label for="channelowner">Channel Owner</label>
+                                                <input type="radio" class="form-check-input" name="role" id="channelowner" value="channel"  formControlName="role">
+                                                <span class="custom-radio"></span>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <label for="subscriber">Subscriber</label>
+                                                <input type="radio" class="form-check-input" name="role" id="subscriber" value="subscriber"  formControlName="role">
+                                                <span class="custom-radio"></span>
+                                            </div>
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['role'].valid && form.controls['role'].touched">*Please select role</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <div class="form-check check-group">
+                                                <input type="checkbox" class="form-check-input" name="fn" id="termscondition" value="Terms-and-Conditions" formControlName="tandc">
+                                                <span class="custom-check"></span>
+                                                <label for="termscondition">I agree the <a routerLink="/accept/terms-of-use">Terms of use</a></label>
+                                            </div>
+                                            <span item-content class="form-error text-danger animated  bounceIn myalert" *ngIf="!form.controls['tandc'].valid && form.controls['tandc'].touched">*Accept Terms and Conditions</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <div class="btn-sec">
+                                            <input type="submit" class="btn btn-default btn-submit" value="Submit">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="form-footer">
+                            <p>Have an account <a routerLink="/auth/login">Login Now</a></p>
+                        </div>
+                    </div>
+                </div><!--/.form-sec-->
+            </div>
+        </div>
+    </section>
+    

@@ -1,0 +1,1 @@
+export { Channel2Module } from './channel.module';

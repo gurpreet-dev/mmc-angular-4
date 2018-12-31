@@ -1,0 +1,63 @@
+<section class="content-header">
+  <h1>
+    Contacts
+  </h1>
+</section>
+
+  <!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+
+
+        <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Sr.no</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let contact of contacts; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>
+                      <ng-container *ngIf="contact.reply != ''; else notreplied">
+                      <span class="label label-success">Replied</span>
+                      </ng-container>
+                      <ng-template #notreplied>
+                      <span class="label label-warning" #notreplied>Not Replied</span>
+                      </ng-template>
+                    </td>
+                    <td>
+                      <a class="btn btn-success btn-xs" routerLink='/admin/contact-us/edit/{{contact._id}}'>Edit</a>
+                      <button type="button" class="btn btn-danger btn-xs" (click) ='delete(contact._id)'>Delete</button>
+                    </td>
+                  </tr>
+                  </tbody>
+                <tfoot>
+                <tr>
+                  <th>Sr.no</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+
+    </div>
+  </div>
+</section>
+        

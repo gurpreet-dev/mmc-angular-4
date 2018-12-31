@@ -1,0 +1,53 @@
+<section class="content-header">
+  <h1>
+    FAQ <a routerLink="/admin/faq/add" class="btn btn-warning">Add faq</a>
+  </h1>
+</section>
+
+  <!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+
+
+        <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Sr.no</th>
+                  <th>Question</th>
+                  <th>Answer</th>
+                  <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let faq of faqs; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ faq.question }}</td>
+                    <td>{{ faq.answer }}</td>
+                    <td>
+                      <a class="btn btn-success btn-xs" routerLink='/admin/faq/edit/{{faq._id}}'>Edit</a>
+                      <button type="button" class="btn btn-danger btn-xs" (click) ='delete(faq._id)'>Delete</button>
+                    </td>
+                  </tr>
+                  </tbody>
+                <tfoot>
+                <tr>
+                  <th>Sr.no</th>
+                  <th>Question</th>
+                  <th>Answer</th>
+                  <th>Actions</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+
+    </div>
+  </div>
+</section>
+        
